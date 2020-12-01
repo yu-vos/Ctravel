@@ -1,4 +1,4 @@
-# SS2-H-Ctravel
+# Ctravel
 backgraund color #f0f8ff
 
 チームmediator
