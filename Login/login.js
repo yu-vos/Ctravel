@@ -1,4 +1,5 @@
-$(function() {
+
+window.addEventListener('DOMContentLoaded', function(){
     $('.hamburger').click(function() {
         $(this).toggleClass('active');
  
