@@ -96,11 +96,12 @@ form {
   border-bottom: 1px dotted #8c8c8c;
 }
 
+/*×ボタン*/
 .my-parts {
 	display: inline-block;
 	width: 30px;
 	height: 30px;
-  position: absolute ; 
+  position: fixed; 
   top: 10%;
   left: 75%;
 	cursor: pointer;
@@ -122,4 +123,11 @@ form {
 }
 .my-parts span::after {
 	transform: rotate(45deg);
+}
+
+.clear-button {
+  border: none;  /* 枠線を消す */
+  outline: none; /* クリックしたときに表示される枠線を消す */
+  background: transparent; /* 背景の灰色を消す */
+  cursor: pointer;
 }
