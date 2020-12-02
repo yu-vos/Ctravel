@@ -4,11 +4,16 @@
         <title>Cトラベル</title>
         <link rel="stylesheet" href="plan_add.css">
         <h1>Cトラベル</h1>
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     </head>
     <body>
         <form action="#" method="post">
-            <input type="text" name="name"placeholder="タイトルを入力してください。">
+            <input  class="title"type="text" name="name"placeholder="タイトルを入力してください。">
+            <input class="basyo" type="text" name="name"placeholder="場所を指定してくさい">
         </form>
+        <a id="fab" href="#">
+                <i class="fa fa-plus"></i>
+            </a>
         <form method="post" enctype="multipart/form-data">
             <label class="upload-label">
                 写真を選択
@@ -17,6 +22,13 @@
         </form>
         <!-- 👇ここにプレビュー画像を追加する -->
         <div id="preview"></div>
+        
+        <header>
+  
+</header>
+        <div id="wrapper">
+
+</div>
     </body>
     <script src="plan_add.js"></script>
 </html>
