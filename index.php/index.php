@@ -9,17 +9,17 @@
 <link rel="stylesheet" href="style.css" type="text/css" media="screen">
 </head>
 <body>
-    <header>
+<header>
   <div id="nav-drawer">
       <input id="nav-input" type="checkbox" class="nav-unshown">
       <label id="nav-open" for="nav-input"><span></span></label>
       <label class="nav-unshown" id="nav-close" for="nav-input"></label>
       <div id="nav-content">
         <ul id="menu">
-            <li><a href="#">ログイン</a></li>
-            <li><a href="#">ホーム</a></li>
-            <li><a href="#">プラン作成</a></li>
-            <li><a href="#">ユーザ設定</a></li>
+            <li><a href="../Login/login.html">ログイン</a></li>
+            <li><a href="index.php">ホーム</a></li>
+            <li><a href="/Login/login.html">プラン作成</a></li>
+            <li><a href="../Login/user_create.html">ユーザ設定</a></li>
         </ul></div>
   </div>
 </header>
@@ -31,19 +31,19 @@
     </div>
 <div class="img">    
     <div>
-        <a href="aaa.png"><img src="aaa.png"></a>
-      <img src="aaa.png">
-      <img src="aaa.png">
+        <a href="image/aaa.png"><img src="image/aaa.png"></a>
+       <a href="image/aaa.png"><img src="image/aaa.png"></a>
+       <a href="image/aaa.png"><img src="image/aaa.png"></a>
     </div>
     <div>
-      <img src="aaa.png">
-      <img src="aaa.png">
-      <img src="aaa.png">
+       <a href="image/aaa.png"><img src="image/aaa.png"></a>
+       <a href="image/aaa.png"><img src="image/aaa.png"></a>
+       <a href="image/aaa.png"><img src="image/aaa.png"></a>
     </div>
     <div>
-      <img src="aaa.png">
-      <img src="aaa.png">
-      <img src="aaa.png">
+       <a href="image/aaa.png"><img src="image/aaa.png"></a>
+      <a href="image/aaa.png"><img src="image/aaa.png"></a>
+       <a href="image/aaa.png"><img src="image/aaa.png"></a>
     </div>
 
     </div>
