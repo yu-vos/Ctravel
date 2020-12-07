@@ -77,3 +77,9 @@ body {
   line-height: 40px;/*＝幅と高さ*/
   font-size: 20px;/*サイズ*/
 }
+
+/*google maps*/
+#sample {
+ width: 700px;
+   height: 400px;
+}
