@@ -32,7 +32,7 @@
 <div class="img">    
     <div>
        <a href="image/aaa.png"><img src="image/aaa.png"></a>
-       <a href="image/aaa.png"><img src="image/aaa.png"></a>
+       <a href="image/aaa.png"> <p>写真１の説明</p> <img src="image/aaa.png"></a>
        <a href="image/aaa.png"><img src="image/aaa.png"></a>
     </div>
     <div>
