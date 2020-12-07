@@ -22,13 +22,11 @@
         </form>
         <!-- 👇ここにプレビュー画像を追加する -->
         <div id="preview"></div>
+        <!--google maps-->
+        <div id="sample"></div>
         
-        <header>
-  
-</header>
-        <div id="wrapper">
-
-</div>
     </body>
     <script src="plan_add.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?
+                             key=AIzaSyBt8VOq7z8BwfdOaghYgQ7_WffuyYk-yxk&callback=initMap" type="text/javascript"></script>
 </html>
