@@ -3,21 +3,25 @@
 <head>
   <meta charset="utf-8">
   <title>ログイン</title>
-  <link rel="stylesheet" href="style.css">  
+  <link rel="stylesheet" href="../css/style.css">  
+
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
-
-  <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
-
-  <script src="jquery-3.5.1.min.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
   
 </head>
   
 <body>
+
+  <!-- ログインの入力場所 -->
 <div class="form-wrapper">
   <h1>サインイン</h1>
+  
+  <!-- ×ボタン -->
+      <div id="closeModal" class="closeModal">
+        ×
+      </div> 
   <a href="home.html"><div class="my-parts"><span></span></div></a>
   <form>
     <div class="form-item">
@@ -25,26 +29,33 @@
       <input id="txtEmail" type="email" name="email" required="required" placeholder="Eメール">
       </input>
     </div>
+
     <div class="form-item">
       <label for="password"></label>
       <input id="txtPassword" type="password" name="password" required="required" placeholder="パスワード"></input>
     </div>
+
     <div class="button-panel">
       <input type="submit" class="button" title="Sign In" value="サインイン"></input>
     </div>
+    
   </form>
+
   <div class="form-footer">
-    <p><button id="btnLogin" class="clear-button">
-      
+    <p><a href="user_create.html">
       アカウント作成
-      </button></p>
-    <button id="btnLogout" class="clear-button">
+    </a></p>
+    <p><a id="btnLogout" href="#">
       ログアウト
-      </button>
+    </a></p>
+    <p><a href="home.html">
+      キャンセル
+    </a></p>
   </div>
 </div>
 </form>
 
+<script src="jquery-3.5.1.min.js"></script>
 <script src="firebaseauth.js"></script>
 
 </html>
