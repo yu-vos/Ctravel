@@ -34,6 +34,7 @@ h1 {
   padding: 1em 0;
 }
 
+/* 入力フォームのデザイン */
 form {
   padding: 0 1.5em;
 }
@@ -106,4 +107,28 @@ form {
   outline: none; /* クリックしたときに表示される枠線を消す */
   background: transparent; /* 背景の灰色を消す */
   cursor: pointer;
+}
+
+/* ヘッダーの設定 */
+.site-header {
+  background: #fff;
+  display: flex;
+  padding: 60px 20px;
+  position: fixed;
+  justify-content: space-between;
+  width: 100%;
+}
+.site-logo img {
+  height: 20px;
+  width: auto;
+}
+.gnav__menu {
+  display: flex;
+}
+.gnav__menu__item {
+  margin-left: 20px;
+}
+.gnav__menu__item a {
+  color: #333;
+  text-decoration: none;
 }
