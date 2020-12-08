@@ -60,6 +60,7 @@
  
 <section id="about">
           <h1>今週のおすすめ</h1>
+          <h2>みんなのが興味を持った場所</h2>
           
           <a href="image/hokouki.png"><img src="image/hokouki.png" width="150" height="100"></a>
 
