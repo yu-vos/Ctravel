@@ -132,3 +132,10 @@ form {
   color: #333;
   text-decoration: none;
 }
+
+.closeModal {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  cursor: pointer;
+}
