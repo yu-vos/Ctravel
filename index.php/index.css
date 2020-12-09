@@ -30,7 +30,7 @@ body{
 a{ color: #69c;}
     a:hover{color:#069;}
  
-#wrapper{
+#wrapper{ /*コンテンツがおいてある全体の箱*/
     width: 960px;
     margin: 0 auto;
 }

@@ -27,8 +27,11 @@
   </div>
 </header>
 <div class="kensaku">
-    <input type="search" name="search" placeholder="キーワードを入力">
-  <input type="submit" name="submit" value="検索">
+<form action="index_search.php" method="post">
+検索用語を入力：<input type="text" name="yourname">
+<input type="submit" value="検索する">
+</form>
+</form>
 <div id="hero">
     <img src="image/yakei1.jpg" alt=" hikouki" width="950" height="350">
     <!--<video src="video/yozora2.mp4" loop autoplay muted  ></video>-->
@@ -60,6 +63,7 @@
  
 <section id="about">
           <h1>今週のおすすめ</h1>
+          <h2>みんなのが興味を持った場所</h2>
           
           <a href="image/hokouki.png"><img src="image/hokouki.png" width="150" height="100"></a>
 

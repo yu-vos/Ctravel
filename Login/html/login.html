@@ -2,60 +2,96 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>ログイン</title>
-  <link rel="stylesheet" href="../css/style.css">  
+  <title>ホーム（仮）</title>
+  <link rel="stylesheet" href="../css/style.css">    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+  
+<body>
+
+  <nav class="z-depth-0 grey lighten-4">
+    <div class="nav-wrapper container">
+      <a href="#" style="color: black;">
+        Cトラベル
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li class="logged-in">
+            <a href="#" class="grey-text" id="logout">Logout</a>
+          </li>
+          <li class="logged-out">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+          </li>
+          <li class="logged-out">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+          </li>
+      </ul>
+  </nav>
+
+  <!-- SIGN UP MODAL -->
+  <div id="modal-signup" class="modal">
+    <div class="modal-content">
+      <h4>Sign up</h4><br />
+      <form id="signup-form">
+        <div class="input-field">
+          <input type="email" id="signup-email" required />
+          <label for="signup-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="signup-password" required />
+          <label for="signup-password">Choose password</label>
+        </div>
+        <button class="btn blue darken-2 z-depth-0">Sign up</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- LOGIN MODAL -->
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+      <h4>Login</h4><br />
+      <form id="login-form">
+        <div class="input-field">
+          <input type="email" id="login-email" required />
+          <label for="login-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="login-password" required />
+          <label for="login-password">Your password</label>
+        </div>
+        <button class="btn blue darken-2 z-depth-0">Login</button>
+      </form>
+    </div>
+  </div>
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
   <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
   <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
   
-</head>
-  
-<body>
-
-  <!-- ログインの入力場所 -->
-<div class="form-wrapper">
-  <h1>サインイン</h1>
-  
-  <!-- ×ボタン -->
-      <div id="closeModal" class="closeModal">
-        ×
-      </div> 
-  <a href="home.html"><div class="my-parts"><span></span></div></a>
-  <form>
-    <div class="form-item">
-      <label for="email"></label>
-      <input id="txtEmail" type="email" name="email" required="required" placeholder="Eメール">
-      </input>
-    </div>
-
-    <div class="form-item">
-      <label for="password"></label>
-      <input id="txtPassword" type="password" name="password" required="required" placeholder="パスワード"></input>
-    </div>
-
-    <div class="button-panel">
-      <input type="submit" class="button" title="Sign In" value="サインイン"></input>
-    </div>
+  <script>
+    // Initialize Firebase
+    var config = {
+    apiKey: "AIzaSyC9KcYrMwFoR7VASRqKzEVz-Gb3y3H4hoc",
+    authDomain: "ctravel-ss2h.firebaseapp.com",
+    databaseURL: "https://ctravel-ss2h.firebaseio.com",
+    projectId: "ctravel-ss2h",
+    appId: "1:586418241988:web:1fec8ae8a0347ed6c12491",
+    };
+    firebase.initializeApp(config);
     
-  </form>
+    // make auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
 
-  <div class="form-footer">
-    <p><a href="user_create.html">
-      アカウント作成
-    </a></p>
-    <p><a id="btnLogout" href="#">
-      ログアウト
-    </a></p>
-    <p><a href="home.html">
-      キャンセル
-    </a></p>
-  </div>
-</div>
-</form>
+  </script>
 
-<script src="jquery-3.5.1.min.js"></script>
-<script src="firebaseauth.js"></script>
+  <!-- Compiled and minified JavaScript -->
+<script src="../js/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="../js/firebaseauth.js"></script>
+<script src="../js/login.js"></script>
+
 
 </html>
