@@ -12,11 +12,11 @@
             </a></div>
         <div style="position:absolute; top:190px;   left:900px;">
             <a id="fab2" href="#">
-                <i class="fa fa-plus" onclick="clickBtn2()"></i>
+                <i class="fa fa-plus" onclick="clickBtn2() ,codeAddress1()"></i>
             </a></div>
         <div style="position:absolute; top:270px;   left:900px;">
             <a id="fab3" href="#">
-                <i class="fa fa-plus" onclick="clickBtn3()"></i>
+                <i class="fa fa-plus" onclick="codeAddress2()"></i>
             </a></div>
         <form action="#" method="post">
             <input  class="title"type="text" name="name"placeholder="タイトルを入力してください。">
