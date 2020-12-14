@@ -18,19 +18,18 @@
       <label class="nav-unshown" id="nav-close" for="nav-input"></label>
       <div id="nav-content">
         <ul id="menu">
-            <li><a href="../Login/login.html">ログイン</a></li>
-            <li><a href="index.php">ホーム</a></li>
+            <li><a href="../Login/html/login.html">ログイン</a></li>
+            <li><a href="index.php/index1.php">ホーム</a></li>
             <li><a href="/Login/login.html">プラン作成</a></li>
-            <li><a href="../Login/user_create.html">ユーザ設定</a></li>
+            <li><a href="../Login/html/user_create.html">ユーザ設定</a></li>
         </ul></div>
        
   </div>
 </header>
 <div class="kensaku">
-<form action="index_search.php" method="post">
-検索用語を入力：<input type="text" name="yourname">
-<input type="submit" value="検索する">
-</form>
+<form action="index_search.php" method="GET">
+キーワード入力<input type="text" name="maker">
+<input type=SUBMIT value="表示">
 </form>
 <div id="hero">
     <img src="image/yakei1.jpg" alt=" hikouki" width="950" height="350">
@@ -45,17 +44,11 @@
 <section id="projects">
      <h1>人気プラン</h1>
      <ul>
-     <li><a href="image/hokouki.png"><img src="image/hokouki.png" width="200" height="130"></a></li>
-     <li><a href="image/hokouki.png"><img src="image/hokouki.png" width="200" height="130"></a></li>
-     <li><a href="image/hokouki.png"><img src="image/hokouki.png" width="200" height="130"></a></li>
-     <li><a href="image/hokouki.png"><img src="image/hokouki.png" width="200" height="130"></a></li>
-     <li><a href="image/hokouki.png"><img src="image/hokouki.png" width="200" height="130"></a></li>
-     <li><a href="image/hokouki.png"><img src="image/hokouki.png" width="200" height="130"></a></li>
-     <li><a href="image/hokouki.png"><img src="image/hokouki.png" width="200" height="130"></a></li>
-     <li><a href="image/hokouki.png"><img src="image/hokouki.png" width="200" height="130"></a></li>
-     <li><a href="image/hokouki.png"><img src="image/hokouki.png" width="200" height="130"></a></li>
-     <li><a href="image/hokouki.png"><img src="image/hokouki.png" width="200" height="130"></a></li>
-     <li><a href="image/hokouki.png"><img src="image/hokouki.png" width="200" height="130"></a></li>
+     <li><a href="image/ryokou1.jpg"><img src="image/ryokou1.jpg" width="200" height="130"></a></li>
+     <li><a href="image/ryokou2.jpg"><img src="image/ryokou2.jpg" width="200" height="130"></a></li>
+     <li><a href="image/ryokou3.jpg"><img src="image/ryokou3.jpg" width="200" height="130"></a></li>
+     <li><a href="image/yakei.jpg"><img src="image/yakei.jpg" width="200" height="130"></a></li>
+     <li><a href="image/yakei1.jpg"><img src="image/yakei1.jpg" width="200" height="130"></a></li>
      <li><a href="image/hokouki.png"><img src="image/hokouki.png" width="200" height="130"></a></li>
      
      </ul>
