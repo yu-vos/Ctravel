@@ -1,3 +1,36 @@
+<?php
+require_once 'functions.php';
+
+$pdo = connectDB();
+
+if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+    // 画像を取得
+
+} else {
+    // 画像を保存
+    if (!empty($_FILES['image']['name'])) {
+        $name = $_FILES['image']['name'];
+        $type = $_FILES['image']['type'];
+        $content = file_get_contents($_FILES['image']['tmp_name']);
+        $size = $_FILES['image']['size'];
+
+        $sql = 'INSERT INTO images(image_name, image_type, image_content, image_size, created_at)
+                VALUES (:image_name, :image_type, :image_content, :image_size, now())';
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':image_name', $name, PDO::PARAM_STR);
+        $stmt->bindValue(':image_type', $type, PDO::PARAM_STR);
+        $stmt->bindValue(':image_content', $content, PDO::PARAM_STR);
+        $stmt->bindValue(':image_size', $size, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+    unset($pdo);
+    header('Location:plan_add.php');
+    exit();
+}
+
+unset($pdo);
+?>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -16,19 +49,40 @@
             </a></div>
         <div style="position:absolute; top:270px;   left:900px;">
             <a id="fab3" href="#">
-                <i class="fa fa-plus" onclick="codeAddress2()"></i>
+                <i class="fa fa-plus" onclick="clickBtn3() ,codeAddress2()"></i>
+            </a></div>
+        <div style="position:absolute; top:350px;   left:900px;">
+            <a id="fab4" href="#">
+                <i class="fa fa-plus" onclick="clickBtn4() ,codeAddress3()"></i>
+            </a></div>
+        <div style="position:absolute; top:430px;   left:900px;">
+            <a id="fab5" href="#">
+                <i class="fa fa-plus" onclick="clickBtn5() ,codeAddress4()"></i>
+            </a></div>
+        <div style="position:absolute; top:510px;   left:900px;">
+            <a id="fab6" href="#">
+                <i class="fa fa-plus" onclick="clickBtn6() ,codeAddress5()"></i>
+            </a></div>
+        <div style="position:absolute; top:590px;   left:900px;">
+            <a id="fab7" href="#">
+                <i class="fa fa-plus" onclick="codeAddress6()"></i>
             </a></div>
         <form action="#" method="post">
             <input  class="title"type="text" name="name"placeholder="タイトルを入力してください。">
-            <div style="position:absolute; top:120px; left:700px;"><input class="basyo" id="address" type="textbox" name="name"placeholder="場所を指定してくさい"></div>
-            <div style="position:absolute; top:200px; left:700px;"><input class="basyo" id="address2" type="textbox" name="name"placeholder="場所を指定してくさい"></div>
-            <div style="position:absolute; top:280px; left:700px;"><input class="basyo" id="address3" type="textbox" name="name"placeholder="場所を指定してくさい"></div>
+            <div style="position:absolute; top:120px; left:700px;"><input class="basyo" id="address" type="textbox" name="plan1"placeholder="場所を指定してくさい"></div>
+            <div style="position:absolute; top:200px; left:700px;"><input class="basyo" id="address2" type="textbox" name="plan2"placeholder="場所を指定してくさい"></div>
+            <div style="position:absolute; top:280px; left:700px;"><input class="basyo" id="address3" type="textbox" name="plan3"placeholder="場所を指定してくさい"></div>
+            <div style="position:absolute; top:360px; left:700px;"><input class="basyo" id="address4" type="textbox" name="plan4"placeholder="場所を指定してくさい"></div>
+            <div style="position:absolute; top:440px; left:700px;"><input class="basyo" id="address5" type="textbox" name="plan5"placeholder="場所を指定してくさい"></div>
+            <div style="position:absolute; top:520px; left:700px;"><input class="basyo" id="address6" type="textbox" name="plan6"placeholder="場所を指定してくさい"></div>
+            <div style="position:absolute; top:600px; left:700px;"><input class="basyo" id="address7" type="textbox" name="plan7"placeholder="場所を指定してくさい"></div>
         </form>
         <form method="post" enctype="multipart/form-data">
             <label class="upload-label">
                 写真を選択
-                <input type="file" id="example"multiple, accept=".png, .jpg, .jpeg, .doc">
+                <input type="file" name="image" id="example"multiple, accept=".png, .jpg, .jpeg, .doc">
             </label>
+            <div style="position:absolute; top:60px; left:800px;"><button type="submit" class="btn btn-primary">保存</button></div>
         </form>
         <!-- 👇ここにプレビュー画像を追加する -->
         <div id="preview"></div>
@@ -154,6 +208,82 @@
           box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
         }
         #fab3 i {/*中央のアイコン*/
+          padding-left: 12px;
+          color: white;
+          line-height: 40px;/*＝幅と高さ*/
+          font-size: 20px;/*サイズ*/
+        }
+        #fab4 {/*円の部分*/
+            float: right;
+            display: block;
+            width: 40px;/*幅*/
+            height: 40px;/*高さ*/
+            background: #03a9f4;/*背景色*/
+            border-radius: 50%;/*角丸く*/
+            transition: .3s;/*滑らかな動きに*/
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.24);/*影*/
+        }
+        #fab4:hover {/*ホバー時*/
+          box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+        }
+        #fab4 i {/*中央のアイコン*/
+          padding-left: 12px;
+          color: white;
+          line-height: 40px;/*＝幅と高さ*/
+          font-size: 20px;/*サイズ*/
+        }
+        #fab5 {/*円の部分*/
+            float: right;
+            display: block;
+            width: 40px;/*幅*/
+            height: 40px;/*高さ*/
+            background: #03a9f4;/*背景色*/
+            border-radius: 50%;/*角丸く*/
+            transition: .3s;/*滑らかな動きに*/
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.24);/*影*/
+        }
+        #fab5:hover {/*ホバー時*/
+          box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+        }
+        #fab5 i {/*中央のアイコン*/
+          padding-left: 12px;
+          color: white;
+          line-height: 40px;/*＝幅と高さ*/
+          font-size: 20px;/*サイズ*/
+        }
+        #fab6 {/*円の部分*/
+            float: right;
+            display: block;
+            width: 40px;/*幅*/
+            height: 40px;/*高さ*/
+            background: #03a9f4;/*背景色*/
+            border-radius: 50%;/*角丸く*/
+            transition: .3s;/*滑らかな動きに*/
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.24);/*影*/
+        }
+        #fab6:hover {/*ホバー時*/
+          box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+        }
+        #fab6 i {/*中央のアイコン*/
+          padding-left: 12px;
+          color: white;
+          line-height: 40px;/*＝幅と高さ*/
+          font-size: 20px;/*サイズ*/
+        }
+        #fab7 {/*円の部分*/
+            float: right;
+            display: block;
+            width: 40px;/*幅*/
+            height: 40px;/*高さ*/
+            background: #03a9f4;/*背景色*/
+            border-radius: 50%;/*角丸く*/
+            transition: .3s;/*滑らかな動きに*/
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.24);/*影*/
+        }
+        #fab7:hover {/*ホバー時*/
+          box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+        }
+        #fab7 i {/*中央のアイコン*/
           padding-left: 12px;
           color: white;
           line-height: 40px;/*＝幅と高さ*/

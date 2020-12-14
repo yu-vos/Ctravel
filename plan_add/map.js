@@ -53,19 +53,87 @@ function codeAddress1(){
   });
 }
 function codeAddress2(){
-  geocoder = new google.maps.Geocoder();
+    geocoder = new google.maps.Geocoder();
 
-  inputAddress3 = document.getElementById('address3').value;
+    inputAddress3 = document.getElementById('address3').value;
 
-  geocoder.geocode({ 'address': inputAddress3}, function(results, status){
-  if (status == 'OK') {
-    map.setCenter(results[0].geometry.location);
-    marker2 = new google.maps.Marker({
-      position: results[0].geometry.location,
-      map: map,
+    geocoder.geocode({ 'address': inputAddress3}, function(results, status){
+        if (status == 'OK') {
+            map.setCenter(results[0].geometry.location);
+            marker2 = new google.maps.Marker({
+            position: results[0].geometry.location,
+            map: map,
+            });
+        } else {
+            alert("該当する結果がありませんでした：" + status);
+        }
     });
-  } else {
-    alert("該当する結果がありませんでした：" + status);
-  }
-});
+}
+function codeAddress3(){
+    geocoder = new google.maps.Geocoder();
+
+    inputAddress4 = document.getElementById('address4').value;
+
+    geocoder.geocode({ 'address': inputAddress4}, function(results, status){
+    if (status == 'OK') {
+      map.setCenter(results[0].geometry.location);
+      marker3 = new google.maps.Marker({
+        position: results[0].geometry.location,
+        map: map,
+      });
+    } else {
+      alert("該当する結果がありませんでした：" + status);
+    }
+  });
+}
+function codeAddress4(){
+    geocoder = new google.maps.Geocoder();
+
+    inputAddress5 = document.getElementById('address5').value;
+
+    geocoder.geocode({ 'address': inputAddress5}, function(results, status){
+    if (status == 'OK') {
+      map.setCenter(results[0].geometry.location);
+      marker4 = new google.maps.Marker({
+        position: results[0].geometry.location,
+        map: map,
+      });
+    } else {
+      alert("該当する結果がありませんでした：" + status);
+    }
+  });
+}
+function codeAddress5(){
+    geocoder = new google.maps.Geocoder();
+
+    inputAddress6 = document.getElementById('address6').value;
+
+    geocoder.geocode({ 'address': inputAddress6}, function(results, status){
+    if (status == 'OK') {
+      map.setCenter(results[0].geometry.location);
+      marker5 = new google.maps.Marker({
+        position: results[0].geometry.location,
+        map: map,
+      });
+    } else {
+      alert("該当する結果がありませんでした：" + status);
+    }
+  });
+}
+function codeAddress6(){
+    geocoder = new google.maps.Geocoder();
+
+    inputAddress7 = document.getElementById('address7').value;
+
+    geocoder.geocode({ 'address': inputAddress7}, function(results, status){
+    if (status == 'OK') {
+      map.setCenter(results[0].geometry.location);
+      marker6 = new google.maps.Marker({
+        position: results[0].geometry.location,
+        map: map,
+      });
+    } else {
+      alert("該当する結果がありませんでした：" + status);
+    }
+  });
 }
