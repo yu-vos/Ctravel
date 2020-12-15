@@ -9,18 +9,34 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 } else {
     // 画像を保存
     if (!empty($_FILES['image']['name'])) {
+        $title = $_POST['title'];
+        $plan1 = $_POST['plan1'];
+        $plan2 = $_POST['plan2'];
+        $plan3 = $_POST['plan3'];
+        $plan4 = $_POST['plan4'];
+        $plan5 = $_POST['plan5'];
+        $plan6 = $_POST['plan6'];
+        $plan7 = $_POST['plan7'];
         $name = $_FILES['image']['name'];
         $type = $_FILES['image']['type'];
         $content = file_get_contents($_FILES['image']['tmp_name']);
         $size = $_FILES['image']['size'];
 
-        $sql = 'INSERT INTO images(image_name, image_type, image_content, image_size, created_at)
-                VALUES (:image_name, :image_type, :image_content, :image_size, now())';
+        $sql = 'INSERT INTO images(image_name, image_type, image_content, image_size, created_at, title, plan1, plan2, plan3, plan4, plan5, plan6, plan7)
+                VALUES (:image_name, :image_type, :image_content, :image_size, now(), :title, :plan1, :plan2, :plan3, :plan4, :plan5, :plan6, :plan7)';
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':image_name', $name, PDO::PARAM_STR);
         $stmt->bindValue(':image_type', $type, PDO::PARAM_STR);
         $stmt->bindValue(':image_content', $content, PDO::PARAM_STR);
         $stmt->bindValue(':image_size', $size, PDO::PARAM_INT);
+        $stmt->bindValue(':title',$title,PDO::PARAM_STR);
+        $stmt->bindValue(':plan1',$plan1,PDO::PARAM_STR);
+        $stmt->bindValue(':plan2',$plan2,PDO::PARAM_STR);
+        $stmt->bindValue(':plan3',$plan3,PDO::PARAM_STR);
+        $stmt->bindValue(':plan4',$plan4,PDO::PARAM_STR);
+        $stmt->bindValue(':plan5',$plan5,PDO::PARAM_STR);
+        $stmt->bindValue(':plan6',$plan6,PDO::PARAM_STR);
+        $stmt->bindValue(':plan7',$plan7,PDO::PARAM_STR);
         $stmt->execute();
     }
     unset($pdo);
@@ -67,8 +83,8 @@ unset($pdo);
             <a id="fab7" href="#">
                 <i class="fa fa-plus" onclick="codeAddress6()"></i>
             </a></div>
-        <form action="#" method="post">
-            <input  class="title"type="text" name="name"placeholder="タイトルを入力してください。">
+        <form action="#" method="post"enctype="multipart/form-data">
+            <div style="position:absolute; top:120px; left:50px;"><input  class="title"type="text" name="title"placeholder="タイトルを入力してください。"></div>
             <div style="position:absolute; top:120px; left:700px;"><input class="basyo" id="address" type="textbox" name="plan1"placeholder="場所を指定してくさい"></div>
             <div style="position:absolute; top:200px; left:700px;"><input class="basyo" id="address2" type="textbox" name="plan2"placeholder="場所を指定してくさい"></div>
             <div style="position:absolute; top:280px; left:700px;"><input class="basyo" id="address3" type="textbox" name="plan3"placeholder="場所を指定してくさい"></div>
@@ -76,20 +92,18 @@ unset($pdo);
             <div style="position:absolute; top:440px; left:700px;"><input class="basyo" id="address5" type="textbox" name="plan5"placeholder="場所を指定してくさい"></div>
             <div style="position:absolute; top:520px; left:700px;"><input class="basyo" id="address6" type="textbox" name="plan6"placeholder="場所を指定してくさい"></div>
             <div style="position:absolute; top:600px; left:700px;"><input class="basyo" id="address7" type="textbox" name="plan7"placeholder="場所を指定してくさい"></div>
-        </form>
-        <form method="post" enctype="multipart/form-data">
-            <label class="upload-label">
+            <div style="position:absolute; top:170px; left:50px;"><label class="upload-label">
                 写真を選択
                 <input type="file" name="image" id="example"multiple, accept=".png, .jpg, .jpeg, .doc">
-            </label>
+                </label></div>
             <div style="position:absolute; top:60px; left:800px;"><button type="submit" class="btn btn-primary">保存</button></div>
         </form>
         <!-- 👇ここにプレビュー画像を追加する -->
-        <div id="preview"></div>
+        <div style="position:absolute; top:250px; left:50px;" id="preview"></div>
         
         <!--<div id="latlngDisplay">ここに緯度、経緯が表示される</div>
         <div id="addressDisplay">ここに住所が表示される</div>-->
-        <div id="map"></div>
+        <div style="position:absolute; top:700px; left:50px;" id="map"></div>
 
         
     <style>
@@ -110,6 +124,7 @@ unset($pdo);
         body {
             background-color: #fff;
             padding: 30px 30px 30px;
+            height: 1100px;
             max-width: 1000px;
             margin: 20px auto;
             box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.18);
@@ -141,15 +156,14 @@ unset($pdo);
           display: none;
         }
         #preview img {
-          margin-left: 50px;
           float: left;
-          width: 200px;
-          height:200px;
+          width: 400px;
+          height:400px;
           border: solid 1px silver;
         }
         #map{
-          height: 500px;
-          width: 500px;
+          height: 400px;
+          width: 400px;
             /* 下の1文を追加 */
           background-color: red;
         }
