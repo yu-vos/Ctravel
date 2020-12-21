@@ -22,7 +22,7 @@ margin:1em 0;padding:0}input,select{vertical-align:middle}
  
 /* 一般・共通設定 */
 body{
-    background: #ebe6d3 url(images/bg.jpg) repeat-x;
+    background: #ffffff url(images/bg.jpg) repeat-x;
     font: 16px/20px "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",'メイリオ',Meiryo,Helvetica,Arial,Sans-Serif;
     color: #666;
 }
@@ -31,7 +31,7 @@ a{ color: #69c;}
     a:hover{color:#069;}
  
 #wrapper{ /*コンテンツがおいてある全体の箱*/
-    width: 960px;
+    width: 1050px;
     margin: 0 auto;
 }
  
@@ -40,20 +40,21 @@ a{ color: #69c;}
     border-left: 5px #d95483 solid;
     padding-left: 10px;
     margin-bottom: 15px;
+    margin-top: 20px;
 }
  
  
 /* ヘッダー */
 header{
-    margin: 50px 0 15px;
+    margin: 25px 0 15px;
     overflow: hidden;
 }
-header .logo{float: left;}
  
 nav{
     float: right;
     margin-top: 35px;
     font-size: 125%;
+    margin-left: 10px;
 }
     nav li{
         display: inline;
@@ -70,10 +71,11 @@ nav{
 /* メインエリア */
 #hero{
   position: relative;/*相対配置*/
-    margin-bottom: 70px;
+    margin-bottom: 20px;
 }
     #hero img{
       border: 5px #fff solid;
+      width: 100%;
     }
     #hero p{
 
@@ -87,6 +89,7 @@ nav{
         font-family :Quicksand, sans-serif;/*Google Font*/
     
     }
+
      
      
 /* 最新の作品 */
@@ -111,9 +114,8 @@ nav{
 /* 自己紹介 */
 #about{
     width: 260px;
-    float: left;
-}
- 
+    float: right;
+} 
  
 /* フッター */
 footer:before{
@@ -139,6 +141,7 @@ footer p{
 
     #nav-drawer {
       position: relative;
+      margin-left: 10px;
     }
     
     /*チェックボックス等は非表示に*/
@@ -164,6 +167,7 @@ footer p{
       display: block;
       content: '';
       cursor: pointer;
+      
     }
     #nav-open span:before {
       bottom: -8px;

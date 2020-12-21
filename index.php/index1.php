@@ -1,3 +1,6 @@
+<?php
+require_once 'functions.php';
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -9,7 +12,6 @@
 </head>
  
 <body>
-<div id="wrapper">
 <header>
      
      <div id="nav-drawer">
@@ -26,21 +28,22 @@
        
   </div>
 </header>
-<div class="kensaku">
-<form action="index_search.php" method="GET">
-キーワード入力<input type="text" name="maker">
-<input type=SUBMIT value="表示">
-</form>
 <div id="hero">
-    <img src="image/yakei1.jpg" alt=" hikouki" width="950" height="350">
+    <img src="image/heder.jpeg" alt=" hikouki" width="950" height="400">
     <!--<video src="video/yozora2.mp4" loop autoplay muted  ></video>-->
      <p>Cトラベル</p>
+     
 </div><!-- /#hero -->
+<div class="kensaku">
+<form action="index_search.php" method="GET">
+キーワード入力<input type="text" name='image_id'>
+<input type=SUBMIT value="表示">
+</form>
+</div>
+
+<div id="wrapper">
 
 
- 
-
- 
 <section id="projects">
      <h1>人気プラン</h1>
      <ul>
@@ -66,8 +69,11 @@
 <footer>
      <p>
          <!--コピーライト-->
+         Copyright (c) Ctravel All Rights Reserved. 無断転載禁止
+
      </p>
 </footer>
 </div>
+<script src=".js"></script>
 </body>
 </html>
