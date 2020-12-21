@@ -72,6 +72,11 @@ $images = $stmt->fetchAll();
                 echo $row['plan7'];
             }
         ?></div>
+        <div style="position:absolute; top:250px; left:50px;" id="preview">
+            <?php for($i = 0; $i < count($images); $i++): ?>
+                <img src="image.php?id=<?= $images[$i]['image_id']; ?>" width="100px" height="auto" class="mr-3">
+        </div>
+        <?php endfor; ?></div>
     <style>
         h1 {
             font-weight: normal;
