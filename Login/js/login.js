@@ -9,8 +9,8 @@ const setupUI = (user) => {
     // account info
     db.collection('users').doc(user.uid).get().then(doc => {
       const html = `
-        <div>${user.email}としてログイン中</div>
-        <div>ID名 : ${doc.data().bio}</div>
+        <div>${doc.data().bio}としてログイン中</div>
+        <div>Eメール : ${user.email}</div>
       `;
       accountDetails.innerHTML = html;
     });
@@ -40,13 +40,12 @@ const setupGuides = (data) => {
         </li>
       `;
       html += li;
+      // location.href = "https://localhost/index1.php";
     });
     guideList.innerHTML = html
   } else {
     guideList.innerHTML = '<h5 class="center-align">ログインしてガイドを表示</h5>';
   }
-  
-
 };
 
 // setup materialize components
