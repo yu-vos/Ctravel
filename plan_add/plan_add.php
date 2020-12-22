@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
         $sql = 'INSERT INTO images(image_name, image_type, image_content, image_size, created_at, title, plan1, plan2, plan3, plan4, plan5, plan6, plan7)
                 VALUES (:image_name, :image_type, :image_content, :image_size, now(), :title, :plan1, :plan2, :plan3, :plan4, :plan5, :plan6, :plan7)';
         $stmt = $pdo->prepare($sql);
-        $stmt->(':image_name', $name, PDO::PARAM_STR);
+        $stmt->bindValue(':image_name', $name, PDO::PARAM_STR);
         $stmt->bindValue(':image_type', $type, PDO::PARAM_STR);
         $stmt->bindValue(':image_content', $content, PDO::PARAM_STR);
         $stmt->bindValue(':image_size', $size, PDO::PARAM_INT);
