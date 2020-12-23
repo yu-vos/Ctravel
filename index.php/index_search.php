@@ -1,22 +1,125 @@
 <?php
-	header('Content-Type: text/html; charset=UTF-8');
-	$maker = $_GET['maker'];
-	$db = new pdo("mysql:host=localhost;dbname=websecuritydb","root","12345");
-	$sql = "SELECT * FROM foodtbl WHERE maker ='$maker' ORDER BY price";
-	$ps = $db->query($sql);
+require_once 'functions.php';
+
+$pdo = connectDB();
+$title = $_GET['title'];
+// 画像を取得
+//$sql = 'SELECT * FROM images WHERE image_id = 1';
+$sql = "SELECT * FROM images WHERE title ='$title' ORDER BY  title";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$images = $stmt->fetchAll();
+
 ?>
-<body>
-	<table border=1>
-		<tr>
-			<th>商品ID</th>
-			<th>品名</th>
-			<th>メーカー</th>
-			<th>単価</th>
-		</tr>
-<?php
-	while ($row = $ps->fetch()){
-		echo "<tr>\n";
-		for ($i = 0; $i < 4; $i++) {
-			echo "<td>" . $row[$i] . "</td>\n";
-		}
-	}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Cトラベル</title>
+        <h1>Cトラベル</h1>
+    </head>
+    <body>
+        <div style="position:absolute; top:120px; left:50px;">
+        <?php 
+            foreach ($images as $row) {
+                // データベースのフィールド名で出力
+                echo $row['title'];
+            }
+        ?></div>
+        <div style="position:absolute; top:120px; left:700px;">
+        <?php 
+            foreach ($images as $row) {
+                // データベースのフィールド名で出力
+                echo $row['plan1'];
+            }
+        ?></div>
+        <div style="position:absolute; top:200px; left:700px;">
+        <?php 
+            foreach ($images as $row) {
+                // データベースのフィールド名で出力
+                echo $row['plan2'];
+            }
+        ?></div>
+        <div style="position:absolute; top:280px; left:700px;">
+        <?php 
+            foreach ($images as $row) {
+                // データベースのフィールド名で出力
+                echo $row['plan3'];
+            }
+        ?></div>
+        <div style="position:absolute; top:360px; left:700px;">
+        <?php 
+            foreach ($images as $row) {
+                // データベースのフィールド名で出力
+                echo $row['plan4'];
+            }
+        ?></div>
+        <div style="position:absolute; top:440px; left:700px;">
+        <?php 
+            foreach ($images as $row) {
+                // データベースのフィールド名で出力
+                echo $row['plan5'];
+            }
+        ?></div>
+        <div style="position:absolute; top:520px; left:700px;">
+        <?php 
+            foreach ($images as $row) {
+                // データベースのフィールド名で出力
+                echo $row['plan6'];
+            }
+        ?></div>
+        <div style="position:absolute; top:600px; left:700px;">
+        <?php 
+            foreach ($images as $row) {
+                // データベースのフィールド名で出力
+                echo $row['plan7'];
+            }
+        ?></div>
+        <div style="position:absolute; top:250px; left:50px;" id="preview">
+            <?php for($i = 0; $i < count($images); $i++): ?>
+                <img src="image.php?id=<?= $images[$i]['image_id']; ?>" width="100px" height="auto" class="mr-3">
+        <?php endfor; ?></div>
+    <style>
+        h1 {
+            font-weight: normal;
+            padding-bottom: 10px;
+            text-align: center;
+            position: relative;
+            margin: 0 0 30px 0;
+            letter-spacing: 5px;
+            position: relative;
+        }
+
+        html {
+            background-color: #f0f8ff;
+            overflow: hidden scroll;
+        }
+        body {
+            background-color: #fff;
+            padding: 30px 30px 30px;
+            height: 1100px;
+            max-width: 1000px;
+            margin: 20px auto;
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.18);
+            border-radius: 3px;
+            position: relative;
+        }
+        .title {
+            margin-left: 70px;
+        }
+        #preview img {
+          float: left;
+          width: 400px;
+          height:400px;
+          border: solid 1px silver;
+        }
+        #map{
+          height: 400px;
+          width: 400px;
+            /* 下の1文を追加 */
+          background-color: red;
+        }
+    </style>
+    </body>
+<!--    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt8VOq7z8BwfdOaghYgQ7_WffuyYk-yxk&callback=initMap" async defer></script>-->
+</html>

@@ -21,8 +21,8 @@ require_once 'functions.php';
       <div id="nav-content">
         <ul id="menu">
             <li><a href="../Login/html/login.html">ログイン</a></li>
-            <li><a href="index.php/index1.php">ホーム</a></li>
-            <li><a href="/Login/login.html">プラン作成</a></li>
+            <li><a href="index1.php">ホーム</a></li>
+            <li><a href="../plan_add/plan_add.php">プラン作成</a></li>
             <li><a href="../Login/html/user_create.html">ユーザ設定</a></li>
         </ul></div>
        
@@ -36,7 +36,7 @@ require_once 'functions.php';
 </div><!-- /#hero -->
 <div class="kensaku">
 <form action="index_search.php" method="GET">
-キーワード入力<input type="text" name='image_id'>
+キーワード入力<input type="text" name='title'>
 <input type=SUBMIT value="表示">
 </form>
 </div>
@@ -47,12 +47,104 @@ require_once 'functions.php';
 <section id="projects">
      <h1>人気プラン</h1>
      <ul>
-     <li><a href="image/ryokou1.jpg"><img src="image/ryokou1.jpg" width="200" height="130"></a></li>
-     <li><a href="image/ryokou2.jpg"><img src="image/ryokou2.jpg" width="200" height="130"></a></li>
-     <li><a href="image/ryokou3.jpg"><img src="image/ryokou3.jpg" width="200" height="130"></a></li>
-     <li><a href="image/yakei.jpg"><img src="image/yakei.jpg" width="200" height="130"></a></li>
-     <li><a href="image/yakei1.jpg"><img src="image/yakei1.jpg" width="200" height="130"></a></li>
-     <li><a href="image/hokouki.png"><img src="image/hokouki.png" width="200" height="130"></a></li>
+         
+     <li> <?php try{
+        $pdo = connectDB();
+        $stmt = $pdo->prepare("SELECT * FROM images where image_id != '' and title != '' ORDER BY RAND() limit 1");
+        $stmt->execute();
+            $images = $stmt->fetchAll();
+        } catch (PDOException $e) {
+                echo $e->getMessage();
+        }
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $_SESSION['image_id'] = $row['image_id'];
+        $_SESSION['title'] = $row['title'];
+
+             for($i = 0; $i < count($images); $i++): ?>
+        <a href="index_search.php?title=<?=  $images[$i]['title']; ?> ">
+        <img src="image.php?id=<?= $images[$i]['image_id']; ?>" width="200" height="130" class="mr-3"></a>
+            <?php endfor; ?></li>
+    <li> <?php try{
+        $pdo = connectDB();
+        $stmt = $pdo->prepare("SELECT * FROM images where image_id != '' and title != '' ORDER BY RAND() limit 1");
+        $stmt->execute();
+            $images = $stmt->fetchAll();
+        } catch (PDOException $e) {
+                echo $e->getMessage();
+        }
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $_SESSION['image_id'] = $row['image_id'];
+        $_SESSION['title'] = $row['title'];
+        
+
+            for($i = 0; $i < count($images); $i++): ?>
+        <a href="index_search.php?title=<?=  $images[$i]['title']; ?> ">
+        <img src="image.php?id=<?= $images[$i]['image_id']; ?>" width="200" height="130" class="mr-3"></a>
+            <?php endfor; ?></li>
+     <li> <?php try{
+        $pdo = connectDB();
+        $stmt = $pdo->prepare("SELECT * FROM images where image_id != '' and title != '' ORDER BY RAND() limit 1");
+        $stmt->execute();
+            $images = $stmt->fetchAll();
+        } catch (PDOException $e) {
+                echo $e->getMessage();
+        }
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $_SESSION['image_id'] = $row['image_id'];
+        $_SESSION['title'] = $row['title'];
+
+            for($i = 0; $i < count($images); $i++): ?>
+         <a href="index_search.php?title=<?=  $images[$i]['title']; ?> ">
+             <img src="image.php?id=<?= $images[$i]['image_id']; ?>" width="200" height="130" class="mr-3"></a>
+            <?php endfor; ?></li>
+     <li> <?php try{
+        $pdo = connectDB();
+        $stmt = $pdo->prepare("SELECT * FROM images where image_id != '' and title != '' ORDER BY RAND() limit 1");
+        $stmt->execute();
+            $images = $stmt->fetchAll();
+        } catch (PDOException $e) {
+                echo $e->getMessage();
+        }
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $_SESSION['image_id'] = $row['image_id'];
+        $_SESSION['title'] = $row['title'];
+
+            for($i = 0; $i < count($images); $i++): ?>
+         <a href="index_search.php?title=<?=  $images[$i]['title']; ?> ">
+             <img src="image.php?id=<?= $images[$i]['image_id']; ?>" width="200" height="130" class="mr-3"></a>
+            <?php endfor; ?></li>
+     <li> <?php try{
+        $pdo = connectDB();
+        $stmt = $pdo->prepare("SELECT * FROM images where image_id != '' and title != '' ORDER BY RAND() limit 1");
+        $stmt->execute();
+            $images = $stmt->fetchAll();
+        } catch (PDOException $e) {
+                echo $e->getMessage();
+        }
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $_SESSION['image_id'] = $row['image_id'];
+        $_SESSION['title'] = $row['title'];
+
+            for($i = 0; $i < count($images); $i++): ?>
+         <a href="index_search.php?title=<?=  $images[$i]['title']; ?> ">
+             <img src="image.php?id=<?= $images[$i]['image_id']; ?>" width="200" height="130" class="mr-3"></a>
+            <?php endfor; ?></li>
+     <li> <?php try{
+        $pdo = connectDB();
+        $stmt = $pdo->prepare("SELECT * FROM images where image_id != '' and title != '' ORDER BY RAND() limit 1");
+        $stmt->execute();
+            $images = $stmt->fetchAll();
+        } catch (PDOException $e) {
+                echo $e->getMessage();
+        }
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $_SESSION['image_id'] = $row['image_id'];
+        $_SESSION['title'] = $row['title'];
+
+            for($i = 0; $i < count($images); $i++): ?>
+         <a href="index_search.php?title=<?=  $images[$i]['title']; ?> ">
+             <img src="image.php?id=<?= $images[$i]['image_id']; ?>" width="200" height="130" class="mr-3"></a>
+            <?php endfor; ?></li>
      
      </ul>
 </section><!-- /#projects -->
@@ -62,6 +154,7 @@ require_once 'functions.php';
           <h2>みんなのが興味を持った場所</h2>
           
           <a href="image/hokouki.png"><img src="image/hokouki.png" width="150" height="100"></a>
+    <a href="image/hokouki.png"><img src="image/hokouki.png" width="150" height="100"></a>
 
                
          
