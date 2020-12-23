@@ -22,10 +22,11 @@ require_once 'functions.php';
       <label class="nav-unshown" id="nav-close" for="nav-input"></label>
       <div id="nav-content">
         <ul id="menu">
-          <li><a class="modal-trigger signbutton" data-toggle="modal" data-target="modal-acmenu" href="#">ログイン</a></li>
+          <li class="logged-out" style="display: none"><a class="modal-trigger signbutton" data-toggle="modal" data-target="modal-acmenu" href="#">ログイン</a></li>
+          <li class="logged-in" style="display: none"><a class="modal-trigger signbutton" data-toggle="modal" data-target="modal-acmenu" href="#">ログアウト</a></li>
           <li><a href="index.php/index1.php">ホーム</a></li>
-          <li><a href="/Login/login.html">プラン作成</a></li>
-          <li><a href="../Login/html/user_create.html">ユーザ設定</a></li>
+          <li class="logged-in" style="display: none"><a href="../plan_add/plan_add.php">プラン作成</a></li>
+          <li class="logged-in" style="display: none"><a href="../Login/html/user_create.html">ユーザ設定</a></li>
         </ul>
       </div>
 
@@ -110,7 +111,7 @@ require_once 'functions.php';
   <!-- SIGN UP MODAL -->
   <div id="modal-signup" class="modal">
     <div class="modal-content">
-      <h4>サインアップ</h4>
+      <h4>アカウント登録</h4>
       <br />
       <form id="signup-form">
         <div class="input-field">
@@ -125,7 +126,7 @@ require_once 'functions.php';
           <input type="text" id="signup-name" required />
           <label for="signup-name">あなたの名前</label>
         </div>
-        <button class="btn blue darken-2 z-depth-0">Sign up</button>
+        <button class="btn blue darken-2 z-depth-0">登録</button>
         <p class="error pink-text center-align"></p>
       </form>
     </div>
@@ -145,7 +146,7 @@ require_once 'functions.php';
           <input type="password" id="login-password" required />
           <label for="login-password">あなたのパスワード</label>
         </div>
-        <button class="btn blue darken-2 z-depth-0">Login</button>
+        <button class="btn blue darken-2 z-depth-0">ログイン</button>
         <p class="error pink-text center-align"></p>
       </form>
     </div>
