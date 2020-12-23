@@ -1,7 +1,6 @@
 function initMap(){
 
     tokyo = {lat: 35.6803997, lng: 139.7690174}
-    akihabara = {lat: 35.698383, lng: 139.773072}
 
     map = new google.maps.Map(document.getElementById('map'), {
     center: tokyo,
@@ -9,12 +8,6 @@ function initMap(){
   });
 
     marker = new google.maps.Marker({
-    map: map
-  });
-    marker1 = new google.maps.Marker({
-    map: map
-  });
-  marker2 = new google.maps.Marker({
     map: map
   });
 }
@@ -31,7 +24,10 @@ function codeAddress(){
         map: map,
       });
     } else {
-      alert("該当する結果がありませんでした：" + status);
+      alert("プラスを押す前に左側に場所を指定してくださいまたは場所が存在していません");
+        fab.style.display ="block";
+        address2.style.display ="none";
+        fab2.style.display ="none";
     }
   });
 }
@@ -48,7 +44,12 @@ function codeAddress1(){
         map: map,
       });
     } else {
-      alert("該当する結果がありませんでした：" + status);
+      alert("プラスを押す前に左側に場所を指定してください");
+        fab2.style.display ="block";
+        // blockで表示
+        address3.style.display ="none";
+        // blockで表示
+        fab3.style.display ="none";
     }
   });
 }
@@ -65,7 +66,12 @@ function codeAddress2(){
             map: map,
             });
         } else {
-            alert("該当する結果がありませんでした：" + status);
+            alert("プラスを押す前に左側に場所を指定してください");
+            fab3.style.display ="block";
+            // blockで表示
+            address4.style.display ="none";
+            // blockで表示
+            fab4.style.display ="none";
         }
     });
 }
@@ -82,7 +88,12 @@ function codeAddress3(){
         map: map,
       });
     } else {
-      alert("該当する結果がありませんでした：" + status);
+      alert("プラスを押す前に左側に場所を指定してください");
+        fab4.style.display ="block";
+        // blockで表示
+        address5.style.display ="none";
+        // blockで表示
+        fab5.style.display ="none";
     }
   });
 }
@@ -99,7 +110,12 @@ function codeAddress4(){
         map: map,
       });
     } else {
-      alert("該当する結果がありませんでした：" + status);
+      alert("プラスを押す前に左側に場所を指定してください");
+        fab5.style.display ="block";
+            // blockで表示
+            address6.style.display ="none";
+            // blockで表示
+            fab6.style.display ="none";
     }
   });
 }
@@ -116,7 +132,12 @@ function codeAddress5(){
         map: map,
       });
     } else {
-      alert("該当する結果がありませんでした：" + status);
+      alert("プラスを押す前に左側に場所を指定してください");
+        fab6.style.display ="block";
+            // blockで表示
+            address7.style.display ="none";
+            // blockで表示
+            fab7.style.display ="none";
     }
   });
 }
@@ -133,7 +154,7 @@ function codeAddress6(){
         map: map,
       });
     } else {
-      alert("該当する結果がありませんでした：" + status);
+      alert("プラスを押す前に左側に場所を指定してください");
     }
   });
 }

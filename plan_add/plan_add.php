@@ -5,7 +5,6 @@ $pdo = connectDB();
 
 if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     // 画像を取得
-
 } else {
     // 画像を保存
     if (!empty($_FILES['image']['name'])) {
@@ -21,9 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
         $type = $_FILES['image']['type'];
         $content = file_get_contents($_FILES['image']['tmp_name']);
         $size = $_FILES['image']['size'];
-
-        $sql = 'INSERT INTO images(image_name, image_type, image_content, image_size, created_at, title, plan1, plan2, plan3, plan4, plan5, plan6, plan7)
-                VALUES (:image_name, :image_type, :image_content, :image_size, now(), :title, :plan1, :plan2, :plan3, :plan4, :plan5, :plan6, :plan7)';
+        $plan_remarks = $_POST['biko'];
+        //imagesに値を入れる
+        $sql = 'INSERT INTO images(image_name, image_type, image_content, image_size, created_at, title, plan1, plan2, plan3, plan4, plan5, plan6, plan7, plan_remarks)
+                VALUES (:image_name, :image_type, :image_content, :image_size, now(), :title, :plan1, :plan2, :plan3, :plan4, :plan5, :plan6, :plan7, :plan_remarks)';
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':image_name', $name, PDO::PARAM_STR);
         $stmt->bindValue(':image_type', $type, PDO::PARAM_STR);
@@ -37,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
         $stmt->bindValue(':plan5',$plan5,PDO::PARAM_STR);
         $stmt->bindValue(':plan6',$plan6,PDO::PARAM_STR);
         $stmt->bindValue(':plan7',$plan7,PDO::PARAM_STR);
+        $stmt->bindValue(':plan_remarks',$plan_remarks,PDO::PARAM_STR);
         $stmt->execute();
     }
     unset($pdo);
@@ -92,17 +93,18 @@ unset($pdo);
             <div style="position:absolute; top:440px; left:700px;"><input class="basyo" id="address5" type="textbox" name="plan5"placeholder="場所を指定してくさい"></div>
             <div style="position:absolute; top:520px; left:700px;"><input class="basyo" id="address6" type="textbox" name="plan6"placeholder="場所を指定してくさい"></div>
             <div style="position:absolute; top:600px; left:700px;"><input class="basyo" id="address7" type="textbox" name="plan7"placeholder="場所を指定してくさい"></div>
+            <div style="position:absolute; top:700px; right:50px;">
+            <textarea name="biko" rows="30" cols="75"></textarea>
+            </div>
             <div style="position:absolute; top:170px; left:50px;"><label class="upload-label">
                 写真を選択
-                <input type="file" name="image" id="example"multiple, accept=".png, .jpg, .jpeg, .doc">
+                <input type="file" name="image" id="example"multiple, accept=".png, .jpg, .jpeg, .doc, .pdf">
                 </label></div>
             <div style="position:absolute; top:60px; left:800px;"><button type="submit" class="btn btn-primary">保存</button></div>
         </form>
         <!-- 👇ここにプレビュー画像を追加する -->
         <div style="position:absolute; top:250px; left:50px;" id="preview"></div>
-        
-        <!--<div id="latlngDisplay">ここに緯度、経緯が表示される</div>
-        <div id="addressDisplay">ここに住所が表示される</div>-->
+
         <div style="position:absolute; top:700px; left:50px;" id="map"></div>
 
         
@@ -306,8 +308,10 @@ unset($pdo);
     </style>
 
     </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="plan_add.js"></script>
     <script src="map.js"></script>
     <script src="button.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt8VOq7z8BwfdOaghYgQ7_WffuyYk-yxk&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt8VOq7z8BwfdOaghYgQ7_WffuyYk-yxk&callback=initMap" async defer>
+    </script>
 </html>
