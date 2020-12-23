@@ -7,11 +7,10 @@
 // listen for auth status changes
 auth.onAuthStateChanged(user => {
   if (user) {
-      setupUI(user);
+    setupUI(user);
     err => console.log(err.message);
   } else {
     setupUI();
-    //setupGuides([]);
   }
 });
 
@@ -66,6 +65,8 @@ loginForm.addEventListener('submit', (e) => {
     M.Modal.getInstance(modal).close();
     loginForm.reset();
     loginForm.querySelector('.error').innerHTML = '';
+    //ここでplan_add.phpに画面遷移している。
+    location.href = "http://localhost/pj/ctrvel/index.php/index1.php";
   }).catch(err => {
     loginForm.querySelector('.error').innerHTML = err.message;
   });

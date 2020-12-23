@@ -63,6 +63,7 @@ loginForm.addEventListener('submit', (e) => {
     location.href = "http://localhost/pj/ctrvel/index.php/plan_add.php";
   }).catch(err => {
     loginForm.querySelector('.error').innerHTML = err.message;
+    location.href = "http://localhost/pj/ctrvel/index.php/.php";
   });
 
 });
