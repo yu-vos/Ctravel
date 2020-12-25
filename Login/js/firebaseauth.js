@@ -83,7 +83,7 @@ loginForm.addEventListener('submit', (e) => {
     loginForm.reset();
     loginForm.querySelector('.error').innerHTML = '';
     //ここでplan_add.phpに画面遷移している。
-    location.href = "http://localhost/pj/ctrvel/index.php/index1.php";
+    location.href = "file:///C:/Users/s192207.TSITCL/Desktop/vscode/Ctravel/Login/html/plan_info.html";
   }).catch(err => {
     loginForm.querySelector('.error').innerHTML = err.message;
   });
