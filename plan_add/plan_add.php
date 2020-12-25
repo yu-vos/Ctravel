@@ -1,52 +1,3 @@
-<?php
-require_once 'functions.php';
-
-$pdo = connectDB();
-
-if ($_SERVER['REQUEST_METHOD'] != 'POST') {
-    // 画像を取得
-} else {
-    // 画像を保存
-    if (!empty($_FILES['image']['name'])) {
-        $title = $_POST['title'];
-        $plan1 = $_POST['plan1'];
-        $plan2 = $_POST['plan2'];
-        $plan3 = $_POST['plan3'];
-        $plan4 = $_POST['plan4'];
-        $plan5 = $_POST['plan5'];
-        $plan6 = $_POST['plan6'];
-        $plan7 = $_POST['plan7'];
-        $name = $_FILES['image']['name'];
-        $type = $_FILES['image']['type'];
-        $content = file_get_contents($_FILES['image']['tmp_name']);
-        $size = $_FILES['image']['size'];
-        $plan_remarks = $_POST['biko'];
-        //imagesに値を入れる
-        $sql = 'INSERT INTO images(image_name, image_type, image_content, image_size, created_at, title, plan1, plan2, plan3, plan4, plan5, plan6, plan7, plan_remarks)
-                VALUES (:image_name, :image_type, :image_content, :image_size, now(), :title, :plan1, :plan2, :plan3, :plan4, :plan5, :plan6, :plan7, :plan_remarks)';
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindValue(':image_name', $name, PDO::PARAM_STR);
-        $stmt->bindValue(':image_type', $type, PDO::PARAM_STR);
-        $stmt->bindValue(':image_content', $content, PDO::PARAM_STR);
-        $stmt->bindValue(':image_size', $size, PDO::PARAM_INT);
-        $stmt->bindValue(':title',$title,PDO::PARAM_STR);
-        $stmt->bindValue(':plan1',$plan1,PDO::PARAM_STR);
-        $stmt->bindValue(':plan2',$plan2,PDO::PARAM_STR);
-        $stmt->bindValue(':plan3',$plan3,PDO::PARAM_STR);
-        $stmt->bindValue(':plan4',$plan4,PDO::PARAM_STR);
-        $stmt->bindValue(':plan5',$plan5,PDO::PARAM_STR);
-        $stmt->bindValue(':plan6',$plan6,PDO::PARAM_STR);
-        $stmt->bindValue(':plan7',$plan7,PDO::PARAM_STR);
-        $stmt->bindValue(':plan_remarks',$plan_remarks,PDO::PARAM_STR);
-        $stmt->execute();
-    }
-    unset($pdo);
-    header('Location:plan_add.php');
-    exit();
-}
-
-unset($pdo);
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -84,7 +35,7 @@ unset($pdo);
             <a id="fab7" href="#">
                 <i class="fa fa-plus" onclick="codeAddress6()"></i>
             </a></div>
-        <form action="#" method="post"enctype="multipart/form-data">
+        <form action="plan_add2.php" method="post"enctype="multipart/form-data" name="form1" onSubmit="return check()">
             <div style="position:absolute; top:120px; left:50px;"><input  class="title"type="text" name="title"placeholder="タイトルを入力してください。"></div>
             <div style="position:absolute; top:120px; left:700px;"><input class="basyo" id="address" type="textbox" name="plan1"placeholder="場所を指定してくさい"></div>
             <div style="position:absolute; top:200px; left:700px;"><input class="basyo" id="address2" type="textbox" name="plan2"placeholder="場所を指定してくさい"></div>
@@ -96,16 +47,19 @@ unset($pdo);
             <div style="position:absolute; top:700px; right:50px;">
             <textarea name="biko" rows="30" cols="75"></textarea>
             </div>
+            
+            
+            <!-- 👇ここにプレビュー画像を追加する -->
+        <div style="position:absolute; top:250px; left:50px;" id="preview"></div>
+
+        <div style="position:absolute; top:700px; left:50px;" id="map"></div>
             <div style="position:absolute; top:170px; left:50px;"><label class="upload-label">
                 写真を選択
                 <input type="file" name="image" id="example"multiple, accept=".png, .jpg, .jpeg, .doc, .pdf">
                 </label></div>
             <div style="position:absolute; top:60px; left:800px;"><button type="submit" class="btn btn-primary">保存</button></div>
         </form>
-        <!-- 👇ここにプレビュー画像を追加する -->
-        <div style="position:absolute; top:250px; left:50px;" id="preview"></div>
-
-        <div style="position:absolute; top:700px; left:50px;" id="map"></div>
+        
 
         
     <style>
@@ -306,7 +260,6 @@ unset($pdo);
           font-size: 20px;/*サイズ*/
         }
     </style>
-
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="plan_add.js"></script>
