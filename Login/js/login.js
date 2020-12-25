@@ -25,15 +25,7 @@ const setupUI = (user) => {
     loggedOutLinks.forEach(item => item.style.display = 'block');
   }
 };
-// location.href = "https://localhost/index1.php";
 
-// setup materialize components
-document.addEventListener('DOMContentLoaded', function() {
-
-  var modals = document.querySelectorAll('.modal');
-  M.Modal.init(modals);
-
-  var items = document.querySelectorAll('.collapsible');
-  M.Collapsible.init(items);
-
+$('.message a').click(function () {
+  $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
 });
