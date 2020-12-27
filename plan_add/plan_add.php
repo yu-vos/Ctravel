@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Cトラベル</title>
-        <h1>Cトラベル</h1>
+        <title>Cトラベル：プラン登録</title>
+        <h1>Cトラベル：プラン登録</h1>
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     </head>
     <body>
@@ -36,14 +36,14 @@
                 <i class="fa fa-plus" onclick="codeAddress6()"></i>
             </a></div>
         <form action="plan_add2.php" method="post"enctype="multipart/form-data" name="form1" onSubmit="return check()">
-            <div style="position:absolute; top:120px; left:105px;"><input  class="title"type="text" name="title"placeholder="タイトルを入力してください。" id="ti"></div>
-            <div style="position:absolute; top:120px; left:600px;"><input class="basyo" id="address" type="textbox" name="plan1"placeholder="場所を指定したら右のプラスを押してください"></div>
-            <div style="position:absolute; top:200px; left:600px;"><input class="basyo" id="address2" type="textbox" name="plan2"placeholder="場所を指定したら右のプラスを押してください"></div>
-            <div style="position:absolute; top:280px; left:600px;"><input class="basyo" id="address3" type="textbox" name="plan3"placeholder="場所を指定したら右のプラスを押してください"></div>
-            <div style="position:absolute; top:360px; left:600px;"><input class="basyo" id="address4" type="textbox" name="plan4"placeholder="場所を指定したら右のプラスを押してください"></div>
-            <div style="position:absolute; top:440px; left:600px;"><input class="basyo" id="address5" type="textbox" name="plan5"placeholder="場所を指定したら右のプラスを押してください"></div>
-            <div style="position:absolute; top:520px; left:600px;"><input class="basyo" id="address6" type="textbox" name="plan6"placeholder="場所を指定したら右のプラスを押してください"></div>
-            <div style="position:absolute; top:600px; left:600px;"><input class="basyo" id="address7" type="textbox" name="plan7"placeholder="場所を指定したら右のプラスを押してください"></div>
+            <div style="position:absolute; top:120px; left:105px;"><input style="text-align: center;" class="title"type="text" name="title"placeholder="タイトルを入力してください。" id="ti"></div>
+            <div style="position:absolute; top:120px; left:600px;"><input style="text-align: center;" class="basyo" id="address" type="textbox" name="plan1"placeholder="場所を指定したら右のプラスを押してください"></div>
+            <div style="position:absolute; top:200px; left:600px;"><input style="text-align: center;" class="basyo" id="address2" type="textbox" name="plan2"placeholder="場所を指定したら右のプラスを押してください"></div>
+            <div style="position:absolute; top:280px; left:600px;"><input style="text-align: center;" class="basyo" id="address3" type="textbox" name="plan3"placeholder="場所を指定したら右のプラスを押してください"></div>
+            <div style="position:absolute; top:360px; left:600px;"><input style="text-align: center;" class="basyo" id="address4" type="textbox" name="plan4"placeholder="場所を指定したら右のプラスを押してください"></div>
+            <div style="position:absolute; top:440px; left:600px;"><input style="text-align: center;" class="basyo" id="address5" type="textbox" name="plan5"placeholder="場所を指定したら右のプラスを押してください"></div>
+            <div style="position:absolute; top:520px; left:600px;"><input style="text-align: center;" class="basyo" id="address6" type="textbox" name="plan6"placeholder="場所を指定したら右のプラスを押してください"></div>
+            <div style="position:absolute; top:600px; left:600px;"><input style="text-align: center;" class="basyo" id="address7" type="textbox" name="plan7"placeholder="場所を指定したら右のプラスを押してください"></div>
             <div class="box26" style="position:absolute; top:700px; right:50px;">
                 <span class="box-title">備考</span>
             <textarea name="biko" rows="30" cols="75" style="border:none; outline: none; background: none;"></textarea>
