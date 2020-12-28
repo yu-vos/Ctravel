@@ -35,7 +35,6 @@ $images = $stmt->fetchAll();
                                                             // データベースのフィールド名で出力
                                                             echo $row['plan1'];
                                                         } ?>">
-            <span class="box-title1">1</span>
             <p>
                 <?php 
                     foreach ($images as $row) {
@@ -50,7 +49,6 @@ $images = $stmt->fetchAll();
                                                             // データベースのフィールド名で出力
                                                             echo $row['plan2'];
                                                         } ?>">
-            <span class="box-title2">2</span>
             <p>
                 <?php 
                     foreach ($images as $row) {
@@ -65,7 +63,6 @@ $images = $stmt->fetchAll();
                                                             // データベースのフィールド名で出力
                                                             echo $row['plan3'];
                                                         } ?>">
-            <span class="box-title3">3</span>
             <p>
                 <?php 
                     foreach ($images as $row) {
@@ -80,7 +77,6 @@ $images = $stmt->fetchAll();
                                                             // データベースのフィールド名で出力
                                                             echo $row['plan4'];
                                                         } ?>">
-            <span class="box-title4">4</span>
             <p>
                 <?php 
                     foreach ($images as $row) {
@@ -95,7 +91,6 @@ $images = $stmt->fetchAll();
                                                             // データベースのフィールド名で出力
                                                             echo $row['plan5'];
                                                         } ?>">
-            <span class="box-title5">5</span>
             <p>
                 <?php 
                     foreach ($images as $row) {
@@ -110,7 +105,6 @@ $images = $stmt->fetchAll();
                                                             // データベースのフィールド名で出力
                                                             echo $row['plan6'];
                                                         } ?>">
-            <span class="box-title6">6</span>
             <p>
                 <?php 
                     foreach ($images as $row) {
@@ -125,7 +119,6 @@ $images = $stmt->fetchAll();
                                                             // データベースのフィールド名で出力
                                                             echo $row['plan7'];
                                                         } ?>">
-            <span class="box-title7">7</span>
             <p>
                 <?php 
                     foreach ($images as $row) {
@@ -159,19 +152,6 @@ $images = $stmt->fetchAll();
             border: solid 3px #95ccff;
             border-radius: 8px;
         }
-        .box .box-title {
-            position: absolute;
-            display: inline-block;
-            top: -13px;
-            left: 10px;
-            right: -30px;
-            padding: 0 9px;
-            line-height: 1;
-            font-size: 19px;
-            background: #FFF;
-            color: #95ccff;
-            font-weight: bold;
-        }
         .box p {
             margin: 0; 
             padding: 0;
@@ -182,20 +162,6 @@ $images = $stmt->fetchAll();
             color: #232323;
             background: #fff8e8;
             border-left: solid 10px #FF0000;
-        }
-        .box1 .box-title1 {
-            position: absolute;
-            display: inline-block;
-            top: -1px;
-            right: 160px;
-            left: -100px;
-            padding: 0 9px;
-            height: 40px;
-            line-height: 40px;
-            font-size: 30px;
-            background: #FF0000;
-            color: #ffffff;
-            font-weight: bold;
         }
         .box1 p {
             margin: 0; 
@@ -208,20 +174,6 @@ $images = $stmt->fetchAll();
             background: #fff8e8;
             border-left: solid 10px #fd7e00;
         }
-        .box2 .box-title2 {
-            position: absolute;
-            display: inline-block;
-            top: -1px;
-            right: 113px;
-            left: -100px;
-            padding: 0 9px;
-            height: 40px;
-            line-height: 40px;
-            font-size: 30px;
-            background: #fd7e00;
-            color: #ffffff;
-            font-weight: bold;
-        }
         .box2 p {
             margin: 0; 
             padding: 0;
@@ -232,20 +184,6 @@ $images = $stmt->fetchAll();
             color: #232323;
             background: #fff8e8;
             border-left: solid 10px #88F800;
-        }
-        .box3 .box-title3 {
-            position: absolute;
-            display: inline-block;
-            top: -1px;
-            right: 144px;
-            left: -100px;
-            padding: 0 9px;
-            height: 40px;
-            line-height: 40px;
-            font-size: 30px;
-            background: #88F800;
-            color: #ffffff;
-            font-weight: bold;
         }
         .box3 p {
             margin: 0; 
@@ -258,20 +196,6 @@ $images = $stmt->fetchAll();
             background: #fff8e8;
             border-left: solid 10px #008000;
         }
-        .box4 .box-title4 {
-            position: absolute;
-            display: inline-block;
-            top: -1px;
-            right: 160px;
-            left: -100px;
-            padding: 0 9px;
-            height: 40px;
-            line-height: 40px;
-            font-size: 30px;
-            background: #008000;
-            color: #ffffff;
-            font-weight: bold;
-        }
         .box4 p {
             margin: 0; 
             padding: 0;
@@ -282,20 +206,6 @@ $images = $stmt->fetchAll();
             color: #232323;
             background: #fff8e8;
             border-left: solid 10px #00FFFF;
-        }
-        .box5 .box-title5 {
-            position: absolute;
-            display: inline-block;
-            top: -1px;
-            right: 175px;
-            left: -100px;
-            padding: 0 9px;
-            height: 40px;
-            line-height: 40px;
-            font-size: 30px;
-            background: #00FFFF;
-            color: #ffffff;
-            font-weight: bold;
         }
         .box5 p {
             margin: 0; 
@@ -308,20 +218,6 @@ $images = $stmt->fetchAll();
             background: #fff8e8;
             border-left: solid 10px #0000FF;
         }
-        .box6 .box-title6 {
-            position: absolute;
-            display: inline-block;
-            top: -1px;
-            right: 144px;
-            left: -100px;
-            padding: 0 9px;
-            height: 40px;
-            line-height: 40px;
-            font-size: 30px;
-            background: #0000FF;
-            color: #ffffff;
-            font-weight: bold;
-        }
         .box6 p {
             margin: 0; 
             padding: 0;
@@ -333,20 +229,6 @@ $images = $stmt->fetchAll();
             background: #fff8e8;
             border-left: solid 10px #800080;
         }
-        .box7 .box-title7 {
-            position: absolute;
-            display: inline-block;
-            top: -1px;
-            right: 128px;
-            left: -100px;
-            padding: 0 9px;
-            height: 40px;
-            line-height: 40px;
-            font-size: 30px;
-            background: #800080;
-            color: #ffffff;
-            font-weight: bold;
-        }
         .box7 p {
             margin: 0; 
             padding: 0;
@@ -357,18 +239,6 @@ $images = $stmt->fetchAll();
             padding: 0.5em 1em;
             border: solid 3px #95ccff;
             border-radius: 8px;
-        }
-        .box8 .box-title8 {
-            position: absolute;
-            display: inline-block;
-            top: -13px;
-            left: 10px;
-            padding: 0 9px;
-            line-height: 1;
-            font-size: 19px;
-            background: #FFF;
-            color: #95ccff;
-            font-weight: bold;
         }
         .box8 p {
             margin: 0; 
@@ -418,6 +288,13 @@ $images = $stmt->fetchAll();
     <script src="map1.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt8VOq7z8BwfdOaghYgQ7_WffuyYk-yxk&callback=initMap" async defer></script>
     <script>
+        var infoWindow1;
+        var infoWindow2;
+        var infoWindow3;
+        var infoWindow4;
+        var infoWindow5;
+        var infoWindow6;
+        var infoWindow7;
           function codeAddress(){
                 geocoder = new google.maps.Geocoder();
 
@@ -430,6 +307,12 @@ $images = $stmt->fetchAll();
                     position: results[0].geometry.location,
                     map: map,
                   });
+                    infoWindow1 = new google.maps.InfoWindow({ // 吹き出しの追加
+                        content: inputAddress // 吹き出しに表示する内容
+                    });
+                    marker.addListener('click', function() { // マーカーをクリックしたとき
+                        infoWindow1.open(map, marker); // 吹き出しの表示
+                    });
                 } else {
                 }
               });
@@ -446,6 +329,12 @@ $images = $stmt->fetchAll();
                     position: results[0].geometry.location,
                     map: map,
                   });
+                    infoWindow2 = new google.maps.InfoWindow({ // 吹き出しの追加
+                        content: inputAddress2 // 吹き出しに表示する内容
+                    });
+                    marker1.addListener('click', function() { // マーカーをクリックしたとき
+                        infoWindow2.open(map, marker1); // 吹き出しの表示
+                    });
                 } else {
                 }
               });
@@ -462,6 +351,12 @@ $images = $stmt->fetchAll();
                         position: results[0].geometry.location,
                         map: map,
                         });
+                        infoWindow3 = new google.maps.InfoWindow({ // 吹き出しの追加
+            content: inputAddress3 // 吹き出しに表示する内容
+              });
+             marker2.addListener('click', function() { // マーカーをクリックしたとき
+                 infoWindow3.open(map, marker2); // 吹き出しの表示
+            });
                     } else {
                     }
                 });
@@ -478,6 +373,12 @@ $images = $stmt->fetchAll();
                     position: results[0].geometry.location,
                     map: map,
                   });
+                    infoWindow4 = new google.maps.InfoWindow({ // 吹き出しの追加
+            content: inputAddress4 // 吹き出しに表示する内容
+              });
+             marker3.addListener('click', function() { // マーカーをクリックしたとき
+                 infoWindow4.open(map, marker3); // 吹き出しの表示
+            });
                 } else {
                 }
               });
@@ -494,6 +395,12 @@ $images = $stmt->fetchAll();
                     position: results[0].geometry.location,
                     map: map,
                   });
+                    infoWindow5 = new google.maps.InfoWindow({ // 吹き出しの追加
+            content: inputAddress5 // 吹き出しに表示する内容
+              });
+             marker4.addListener('click', function() { // マーカーをクリックしたとき
+                 infoWindow5.open(map, marker4); // 吹き出しの表示
+            });
                 } else {
                 }
               });
@@ -510,6 +417,12 @@ $images = $stmt->fetchAll();
                     position: results[0].geometry.location,
                     map: map,
                   });
+                    infoWindow6 = new google.maps.InfoWindow({ // 吹き出しの追加
+            content: inputAddress6 // 吹き出しに表示する内容
+              });
+             marker5.addListener('click', function() { // マーカーをクリックしたとき
+                 infoWindow6.open(map, marker5); // 吹き出しの表示
+            });
                 } else {
                 }
               });
@@ -526,6 +439,12 @@ $images = $stmt->fetchAll();
                     position: results[0].geometry.location,
                     map: map,
                   });
+                    infoWindow7 = new google.maps.InfoWindow({ // 吹き出しの追加
+            content: inputAddress7 // 吹き出しに表示する内容
+              });
+             marker6.addListener('click', function() { // マーカーをクリックしたとき
+                 infoWindow7.open(map, marker6); // 吹き出しの表示
+            });
                 } else {
                 }
               });
