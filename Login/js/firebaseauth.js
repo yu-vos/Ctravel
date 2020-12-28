@@ -80,12 +80,7 @@ loginForm.addEventListener('submit', (e) => {
     loginForm.reset();
     loginForm.querySelector('.error').innerHTML = '';
     //ここでplan_add.phpに画面遷移している。
-<<<<<<< HEAD
     window,location.href='../../index.php/index.php';
-=======
-    location.href = "file:///C:/Users/s192207.TSITCL/Desktop/vscode/Ctravel/Login/html/plan_info.html";
->>>>>>> b8524b60460875c0e92e3f12db075534c022d594
-  }).catch(err => {
     loginForm.querySelector('.error').innerHTML = err.message;
   });
 
