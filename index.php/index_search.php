@@ -17,8 +17,14 @@ $images = $stmt->fetchAll();
         <meta charset="utf-8">
         <title>Cトラベル：プラン一覧</title>
         <h1>Cトラベル：プラン一覧</h1>
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     </head>
     <body>
+    <div style="position:absolute; top:50px; left:50px;">
+            <a id="fab8" href="index1.php">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            </a>
+        </div>
         <div class="box" style="position:absolute; top:120px; left:50px;">
             <span class="box-title">タイトル</span>
             <p>
