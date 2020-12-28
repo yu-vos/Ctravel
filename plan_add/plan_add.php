@@ -35,6 +35,11 @@
             <a id="fab7" href="#">
                 <i class="fa fa-plus" onclick="codeAddress6()"></i>
             </a></div>
+            <div style="position:absolute; top:50px; left:50px;">
+            <a id="fab8" href="index1.php">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            </a>
+        </div>
         <form action="plan_add2.php" method="post"enctype="multipart/form-data" name="form1" onSubmit="return check()">
             <div style="position:absolute; top:120px; left:105px;"><input style="text-align: center;" class="title"type="text" name="title"placeholder="タイトルを入力してください。" id="ti"></div>
             <div style="position:absolute; top:120px; left:600px;"><input style="text-align: center;" class="basyo" id="address" type="textbox" name="plan1"placeholder="場所を指定したら右のプラスを押してください"></div>
