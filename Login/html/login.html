@@ -33,11 +33,11 @@
         <form class="login-form" id="login-form">
           <div class="account-details"></div>
           <div class="account-extras"></div>
-          <input type="email" id="login-email" placeholder="Eメール" />
-          <input type="password" id="login-password" placeholder="パスワード" />
-          <button>login</button>
+          <input class="logged-out" style="display: none"type="email" id="login-email" placeholder="Eメール" />
+          <input class="logged-out" style="display: none"type="password" id="login-password" placeholder="パスワード" />
+          <button class="logged-out" style="display: none">login</button>
+          <button class="logged-in" style="display: none" id="logout">logout</button>
           <p class="message">未登録ですか？ <a href="#">アカウント作成</a></p>
-          <p><a href="#" id="logout">ログアウト</a></p>
           <p class="error pink-text center-align"></p>
         </form>
       </div>
