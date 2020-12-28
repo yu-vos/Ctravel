@@ -3,7 +3,7 @@ require_once 'functions.php';
 
 $pdo = connectDB();
 // 画像を取得
-$sql = 'SELECT * FROM images WHERE image_id = 26';
+$sql = 'SELECT * FROM images WHERE image_id = 60';
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $images = $stmt->fetchAll();
@@ -12,101 +12,136 @@ $images = $stmt->fetchAll();
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Cトラベル</title>
-        <h1>Cトラベル</h1>
+        <title>Cトラベル：プラン一覧</title>
+        <h1>Cトラベル：プラン一覧</h1>
     </head>
     <body>
-        <div style="position:absolute; top:120px; left:50px;">
-        <?php 
-            foreach ($images as $row) {
-                // データベースのフィールド名で出力
-                echo $row['title'];
-            }
-        ?></div>
-        <div style="position:absolute; top:120px; left:700px;">
+        <div class="box" style="position:absolute; top:120px; left:50px;">
+            <span class="box-title">タイトル</span>
+            <p>
+                <?php 
+                    foreach ($images as $row) {
+                        // データベースのフィールド名で出力
+                        echo $row['title'];
+                    }
+                ?>
+            </p>
+        </div>
+        <div class="box1" style="position:absolute; top:120px; left:700px;">
             <input id="address" type="hidden" value="<?php foreach ($images as $row) {
                                                             // データベースのフィールド名で出力
                                                             echo $row['plan1'];
                                                         } ?>">
-        <?php 
-            foreach ($images as $row) {
-                // データベースのフィールド名で出力
-                echo $row['plan1'];
-            }
-        ?></div>
-        <div style="position:absolute; top:200px; left:700px;">
+            <span class="box-title1">1</span>
+            <p>
+                <?php 
+                    foreach ($images as $row) {
+                        // データベースのフィールド名で出力
+                        echo $row['plan1'];
+                    }
+                ?>
+            </p>
+        </div>
+        <div class="box2" style="position:absolute; top:200px; left:700px;">
             <input id="address2" type="hidden" value="<?php foreach ($images as $row) {
                                                             // データベースのフィールド名で出力
                                                             echo $row['plan2'];
                                                         } ?>">
-        <?php 
-            foreach ($images as $row) {
-                // データベースのフィールド名で出力
-                echo $row['plan2'];
-            }
-        ?></div>
-        <div style="position:absolute; top:280px; left:700px;">
+            <span class="box-title2">2</span>
+            <p>
+                <?php 
+                    foreach ($images as $row) {
+                        // データベースのフィールド名で出力
+                        echo $row['plan2'];
+                    }
+                ?>
+            </p>
+        </div>
+        <div class="box3" style="position:absolute; top:280px; left:700px;">
             <input id="address3" type="hidden" value="<?php foreach ($images as $row) {
                                                             // データベースのフィールド名で出力
                                                             echo $row['plan3'];
                                                         } ?>">
-        <?php 
-            foreach ($images as $row) {
-                // データベースのフィールド名で出力
-                echo $row['plan3'];
-            }
-        ?></div>
-        <div style="position:absolute; top:360px; left:700px;">
+            <span class="box-title3">3</span>
+            <p>
+                <?php 
+                    foreach ($images as $row) {
+                        // データベースのフィールド名で出力
+                        echo $row['plan3'];
+                    }
+                ?>
+            </p>
+        </div>
+        <div class="box4" style="position:absolute; top:360px; left:700px;">
             <input id="address4" type="hidden" value="<?php foreach ($images as $row) {
                                                             // データベースのフィールド名で出力
                                                             echo $row['plan4'];
                                                         } ?>">
-        <?php 
-            foreach ($images as $row) {
-                // データベースのフィールド名で出力
-                echo $row['plan4'];
-            }
-        ?></div>
-        <div style="position:absolute; top:440px; left:700px;">
+            <span class="box-title4">4</span>
+            <p>
+                <?php 
+                    foreach ($images as $row) {
+                        // データベースのフィールド名で出力
+                        echo $row['plan4'];
+                    }
+                ?>
+            </p>
+        </div>
+        <div class="box5" style="position:absolute; top:440px; left:700px;">
             <input id="address5" type="hidden" value="<?php foreach ($images as $row) {
                                                             // データベースのフィールド名で出力
                                                             echo $row['plan5'];
                                                         } ?>">
-        <?php 
-            foreach ($images as $row) {
-                // データベースのフィールド名で出力
-                echo $row['plan5'];
-            }
-        ?></div>
-        <div style="position:absolute; top:520px; left:700px;">
+            <span class="box-title5">5</span>
+            <p>
+                <?php 
+                    foreach ($images as $row) {
+                        // データベースのフィールド名で出力
+                        echo $row['plan5'];
+                    }
+                ?>
+            </p>
+        </div>
+        <div class="box6" style="position:absolute; top:520px; left:700px;">
             <input id="address6" type="hidden" value="<?php foreach ($images as $row) {
                                                             // データベースのフィールド名で出力
                                                             echo $row['plan6'];
                                                         } ?>">
-        <?php 
-            foreach ($images as $row) {
-                // データベースのフィールド名で出力
-                echo $row['plan6'];
-            }
-        ?></div>
-        <div style="position:absolute; top:600px; left:700px;">
+            <span class="box-title6">6</span>
+            <p>
+                <?php 
+                    foreach ($images as $row) {
+                        // データベースのフィールド名で出力
+                        echo $row['plan6'];
+                    }
+                ?>
+            </p>
+        </div>
+        <div class="box7" style="position:absolute; top:600px; left:700px;">
             <input id="address7" type="hidden" value="<?php foreach ($images as $row) {
                                                             // データベースのフィールド名で出力
                                                             echo $row['plan7'];
                                                         } ?>">
-        <?php 
-            foreach ($images as $row) {
-                // データベースのフィールド名で出力
-                echo $row['plan7'];
-            }
-        ?></div>
-        <div style="position:absolute; top:700px; right:50px;" rows="30" cols="75">
+            <span class="box-title7">7</span>
+            <p>
+                <?php 
+                    foreach ($images as $row) {
+                        // データベースのフィールド名で出力
+                        echo $row['plan7'];
+                    }
+                ?>
+            </p>
+        </div>
+        <div class="box8" style="position:absolute; top:700px; left:500px; right:50px;" rows="30" cols="75">
+            <span class="box-title8">備考</span>
+            <p>
             <?php 
                 foreach ($images as $row) {
                     // データベースのフィールド名で出力
                     echo $row['plan_remarks'];
                 }
             ?>
+            </p>
             </div>
         <div style="position:absolute; top:250px; left:50px;" id="preview">
             <?php for($i = 0; $i < count($images); $i++): ?>
@@ -114,6 +149,228 @@ $images = $stmt->fetchAll();
         <?php endfor; ?></div>
         <div style="position:absolute; top:700px; left:50px;" id="map"></div>
     <style>
+        .box {
+            position: relative;
+            margin: 2em 0;
+            padding: 0.5em 1em;
+            border: solid 3px #95ccff;
+            border-radius: 8px;
+        }
+        .box .box-title {
+            position: absolute;
+            display: inline-block;
+            top: -13px;
+            left: 10px;
+            right: -30px;
+            padding: 0 9px;
+            line-height: 1;
+            font-size: 19px;
+            background: #FFF;
+            color: #95ccff;
+            font-weight: bold;
+        }
+        .box p {
+            margin: 0; 
+            padding: 0;
+        }
+        .box1 {
+            padding: 0.5em 1em;
+            margin: 2em 0;
+            color: #232323;
+            background: #fff8e8;
+            border-left: solid 10px #FF0000;
+        }
+        .box1 .box-title1 {
+            position: absolute;
+            display: inline-block;
+            top: -1px;
+            right: 160px;
+            left: -100px;
+            padding: 0 9px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 30px;
+            background: #FF0000;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .box1 p {
+            margin: 0; 
+            padding: 0;
+        }
+        .box2 {
+            padding: 0.5em 1em;
+            margin: 2em 0;
+            color: #232323;
+            background: #fff8e8;
+            border-left: solid 10px #fd7e00;
+        }
+        .box2 .box-title2 {
+            position: absolute;
+            display: inline-block;
+            top: -1px;
+            right: 113px;
+            left: -100px;
+            padding: 0 9px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 30px;
+            background: #fd7e00;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .box2 p {
+            margin: 0; 
+            padding: 0;
+        }
+        .box3 {
+            padding: 0.5em 1em;
+            margin: 2em 0;
+            color: #232323;
+            background: #fff8e8;
+            border-left: solid 10px #88F800;
+        }
+        .box3 .box-title3 {
+            position: absolute;
+            display: inline-block;
+            top: -1px;
+            right: 144px;
+            left: -100px;
+            padding: 0 9px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 30px;
+            background: #88F800;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .box3 p {
+            margin: 0; 
+            padding: 0;
+        }
+        .box4 {
+            padding: 0.5em 1em;
+            margin: 2em 0;
+            color: #232323;
+            background: #fff8e8;
+            border-left: solid 10px #008000;
+        }
+        .box4 .box-title4 {
+            position: absolute;
+            display: inline-block;
+            top: -1px;
+            right: 160px;
+            left: -100px;
+            padding: 0 9px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 30px;
+            background: #008000;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .box4 p {
+            margin: 0; 
+            padding: 0;
+        }
+        .box5 {
+            padding: 0.5em 1em;
+            margin: 2em 0;
+            color: #232323;
+            background: #fff8e8;
+            border-left: solid 10px #00FFFF;
+        }
+        .box5 .box-title5 {
+            position: absolute;
+            display: inline-block;
+            top: -1px;
+            right: 175px;
+            left: -100px;
+            padding: 0 9px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 30px;
+            background: #00FFFF;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .box5 p {
+            margin: 0; 
+            padding: 0;
+        }
+        .box6 {
+            padding: 0.5em 1em;
+            margin: 2em 0;
+            color: #232323;
+            background: #fff8e8;
+            border-left: solid 10px #0000FF;
+        }
+        .box6 .box-title6 {
+            position: absolute;
+            display: inline-block;
+            top: -1px;
+            right: 144px;
+            left: -100px;
+            padding: 0 9px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 30px;
+            background: #0000FF;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .box6 p {
+            margin: 0; 
+            padding: 0;
+        }
+        .box7 {
+            padding: 0.5em 1em;
+            margin: 2em 0;
+            color: #232323;
+            background: #fff8e8;
+            border-left: solid 10px #800080;
+        }
+        .box7 .box-title7 {
+            position: absolute;
+            display: inline-block;
+            top: -1px;
+            right: 128px;
+            left: -100px;
+            padding: 0 9px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 30px;
+            background: #800080;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .box7 p {
+            margin: 0; 
+            padding: 0;
+        }
+        .box8 {
+            position: relative;
+            margin: 2em 0;
+            padding: 0.5em 1em;
+            border: solid 3px #95ccff;
+            border-radius: 8px;
+        }
+        .box8 .box-title8 {
+            position: absolute;
+            display: inline-block;
+            top: -13px;
+            left: 10px;
+            padding: 0 9px;
+            line-height: 1;
+            font-size: 19px;
+            background: #FFF;
+            color: #95ccff;
+            font-weight: bold;
+        }
+        .box8 p {
+            margin: 0; 
+            padding: 0;
+        }
         h1 {
             font-weight: normal;
             padding-bottom: 10px;
@@ -121,22 +378,22 @@ $images = $stmt->fetchAll();
             position: relative;
             margin: 0 0 30px 0;
             letter-spacing: 5px;
-            position: relative;
+            position: absolute; top:20px; left:420px;
         }
 
         html {
-            background-color: #f0f8ff;
-            overflow: hidden scroll;
+            background-image: url(g0125.jpg);
+            background-size:115% auto;
+            overflow-x: hidden scroll;
         }
         body {
             background-color: #fff;
             padding: 30px 30px 30px;
             height: 1100px;
-            max-width: 1000px;
-            margin: 20px auto;
+            width: 1000px;
             box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.18);
             border-radius: 3px;
-            position: relative;
+            position: absolute; top:20px; left:100px;
         }
         .title {
             margin-left: 70px;
@@ -155,6 +412,8 @@ $images = $stmt->fetchAll();
         }
     </style>
     </body>
+    <script src="map1.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt8VOq7z8BwfdOaghYgQ7_WffuyYk-yxk&callback=initMap" async defer></script>
     <script>
           function codeAddress(){
                 geocoder = new google.maps.Geocoder();
@@ -270,6 +529,4 @@ $images = $stmt->fetchAll();
             }
             setTimeout("codeAddress6()", 700);
     </script>
-    <script src="map1.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt8VOq7z8BwfdOaghYgQ7_WffuyYk-yxk&callback=initMap" async defer></script>
 </html>

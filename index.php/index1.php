@@ -22,7 +22,7 @@ require_once 'functions.php';
       <label class="nav-unshown" id="nav-close" for="nav-input"></label>
       <div id="nav-content">
         <ul id="menu">
-            <li class="logged-out" style="display: none"><a class="modal-trigger signbutton" data-toggle="modal" data-target="modal-acmenu" href="#">ログイン</a></li>
+            <li class="logged-out" style="display: none"><a class="modal-trigger signbutton" data-toggle="modal" data-target="modal-acmenu" href="../">ログイン</a></li>
           <li class="logged-in" style="display: none"><a class="modal-trigger signbutton" data-toggle="modal" data-target="modal-acmenu" href="#">ログアウト</a></li>
           <li><a href="index1.php">ホーム</a></li>
           <li class="logged-in" style="display: none"><a href="../plan_add/plan_add.php">プラン作成</a></li>
