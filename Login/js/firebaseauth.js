@@ -77,13 +77,10 @@ loginForm.addEventListener('submit', (e) => {
   // log the user in
   auth.signInWithEmailAndPassword(email, password).then((cred) => {
     console.log(cred.user);
-    // close the signup modal & reset form
-    const modal = document.querySelector('#modal-login');
-    M.Modal.getInstance(modal).close();
     loginForm.reset();
     loginForm.querySelector('.error').innerHTML = '';
     //ここでplan_add.phpに画面遷移している。
-    location.href = "http://localhost/pj/ctrvel/index.php/index1.php";
+    window,location.href='../../index.php/index.php';
   }).catch(err => {
     loginForm.querySelector('.error').innerHTML = err.message;
   });
