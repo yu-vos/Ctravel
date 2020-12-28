@@ -22,7 +22,6 @@ require_once 'functions.php';
       <div id="nav-content">
         <ul id="menu">
           <li><a href="../Login/html/login.html">ログイン</a></li>
-          <li class="logged-in" style="display: none" id="logout"><a href="#">ログアウト</a></li>
           <li><a href="index.php">ホーム</a></li>
           <li class="logged-in" style="display: none"><a href="../plan_add/plan_add.php">プラン作成</a></li>
           <li class="logged-in" style="display: none"><a href="../Login/html/user_create.html">ユーザ設定</a></li>
