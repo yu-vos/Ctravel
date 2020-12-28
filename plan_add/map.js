@@ -1,3 +1,10 @@
+var infoWindow1;
+var infoWindow2;
+var infoWindow3;
+var infoWindow4;
+var infoWindow5;
+var infoWindow6;
+var infoWindow7;
 function initMap(){
 
     tokyo = {lat: 35.6803997, lng: 139.7690174}
@@ -23,6 +30,12 @@ function codeAddress(){
         position: results[0].geometry.location,
         map: map,
       });
+        infoWindow1 = new google.maps.InfoWindow({ // 吹き出しの追加
+            content: inputAddress // 吹き出しに表示する内容
+      });
+     marker.addListener('click', function() { // マーカーをクリックしたとき
+         infoWindow1.open(map, marker); // 吹き出しの表示
+        });
     } else {
       alert("プラスを押す前に左側に場所を指定してくださいまたは場所が存在していません");
         fab.style.display ="block";
@@ -43,6 +56,12 @@ function codeAddress1(){
         position: results[0].geometry.location,
         map: map,
       });
+        infoWindow2 = new google.maps.InfoWindow({ // 吹き出しの追加
+            content: inputAddress2 // 吹き出しに表示する内容
+      });
+     marker1.addListener('click', function() { // マーカーをクリックしたとき
+         infoWindow2.open(map, marker1); // 吹き出しの表示
+        });
     } else {
       alert("プラスを押す前に左側に場所を指定してください");
         fab2.style.display ="block";
@@ -64,6 +83,12 @@ function codeAddress2(){
             marker2 = new google.maps.Marker({
             position: results[0].geometry.location,
             map: map,
+            });
+            infoWindow3 = new google.maps.InfoWindow({ // 吹き出しの追加
+            content: inputAddress3 // 吹き出しに表示する内容
+              });
+             marker2.addListener('click', function() { // マーカーをクリックしたとき
+                 infoWindow3.open(map, marker2); // 吹き出しの表示
             });
         } else {
             alert("プラスを押す前に左側に場所を指定してください");
@@ -87,6 +112,12 @@ function codeAddress3(){
         position: results[0].geometry.location,
         map: map,
       });
+        infoWindow4 = new google.maps.InfoWindow({ // 吹き出しの追加
+            content: inputAddress4 // 吹き出しに表示する内容
+              });
+             marker3.addListener('click', function() { // マーカーをクリックしたとき
+                 infoWindow4.open(map, marker3); // 吹き出しの表示
+            });
     } else {
       alert("プラスを押す前に左側に場所を指定してください");
         fab4.style.display ="block";
@@ -109,6 +140,12 @@ function codeAddress4(){
         position: results[0].geometry.location,
         map: map,
       });
+        infoWindow5 = new google.maps.InfoWindow({ // 吹き出しの追加
+            content: inputAddress5 // 吹き出しに表示する内容
+              });
+             marker4.addListener('click', function() { // マーカーをクリックしたとき
+                 infoWindow5.open(map, marker4); // 吹き出しの表示
+            });
     } else {
       alert("プラスを押す前に左側に場所を指定してください");
         fab5.style.display ="block";
@@ -131,6 +168,12 @@ function codeAddress5(){
         position: results[0].geometry.location,
         map: map,
       });
+        infoWindow6 = new google.maps.InfoWindow({ // 吹き出しの追加
+            content: inputAddress6 // 吹き出しに表示する内容
+              });
+             marker5.addListener('click', function() { // マーカーをクリックしたとき
+                 infoWindow6.open(map, marker5); // 吹き出しの表示
+            });
     } else {
       alert("プラスを押す前に左側に場所を指定してください");
         fab6.style.display ="block";
@@ -153,6 +196,12 @@ function codeAddress6(){
         position: results[0].geometry.location,
         map: map,
       });
+        infoWindow7 = new google.maps.InfoWindow({ // 吹き出しの追加
+            content: inputAddress7 // 吹き出しに表示する内容
+              });
+             marker6.addListener('click', function() { // マーカーをクリックしたとき
+                 infoWindow7.open(map, marker6); // 吹き出しの表示
+            });
     } else {
       alert("プラスを押す前に左側に場所を指定してください");
     }
