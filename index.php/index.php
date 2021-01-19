@@ -20,7 +20,11 @@ require_once 'functions.php';
       <label class="nav-unshown" id="nav-close" for="nav-input"></label>
       <div id="nav-content">
         <ul id="menu">
+<<<<<<< HEAD
             <li ><a  href="../Login/html/login.html">ログイン</a></li>
+=======
+          <li><a href="../Login/html/login.html">ログイン</a></li>
+>>>>>>> 10e262e875d584736fab2c025975a391185f3c3a
           <li><a href="index.php">ホーム</a></li>
           <li class="logged-in" style="display: none"><a href="../plan_add/plan_add.php">プラン作成</a></li>
         </ul></div>
