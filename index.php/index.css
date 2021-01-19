@@ -31,7 +31,7 @@ a{ color: #69c;}
     a:hover{color:#069;}
  
 #wrapper{ /*コンテンツがおいてある全体の箱*/
-    width: 1050px;
+    width: 100%;
     margin: 0 auto;
 }
  
@@ -94,20 +94,37 @@ nav{
      
 /* 最新の作品 */
 #projects{
-    width: 670px;
+ position: relative;/*相対配置*/
+    width: 100%;
     float: left;
     margin-right: 30px;
+　  
+
 }
 #projects ul{
     overflow: hidden;
     margin-right: -20px;
+width: 100%;
 }
 #projects li{
+
     float: left;
     margin: 0 20px 20px 0
+width: 100%;
+}
+
+#projects p{
+  position: absolute;/*絶対配置*/
+  color: white;/*文字は白に*/
+  font-size: 20px;
+  line-height: 1;/*行高は1に*/
+  padding: 5px 30px;/*文字周りの余白*/
+  font-family :Quicksand, sans-serif;/*Google Font*/
+
 }
 #projects img{border: 5px #fff solid;}
     #projects img:hover{border: 5px #69c solid;}
+width: 100%;
  
  
  
@@ -124,7 +141,6 @@ footer:before{
     clear: both;
 }
 footer p{
-    background: #69c;
     width: 200px;
     margin: 50px auto 20px;
     padding: 5px;

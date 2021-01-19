@@ -15,13 +15,14 @@ $images = $stmt->fetchAll();
 <html>
     <head>
         <meta charset="utf-8">
+ <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
         <title>Cトラベル：プラン一覧</title>
         <h1>Cトラベル：プラン一覧</h1>
-        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     </head>
     <body>
-    <div style="position:absolute; top:50px; left:50px;">
-            <a id="fab8" href="index1.php">
+
+<div style="position:absolute; top:50px; left:50px;">
+            <a id="fab8" href="http://fancy-takeo-8517.deca.jp/Ctravel/index.php/">
                 <i class="fa fa-arrow-left" aria-hidden="true"></i>
             </a>
         </div>

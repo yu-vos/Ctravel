@@ -80,7 +80,8 @@ loginForm.addEventListener('submit', (e) => {
     loginForm.reset();
     loginForm.querySelector('.error').innerHTML = '';
     //ここでplan_add.phpに画面遷移している。
-    //window,location.href='../../index.php/index.php';
+    window,location.href='../../index.php/index.php';
+  }).catch(err => {
     loginForm.querySelector('.error').innerHTML = err.message;
   });
 
