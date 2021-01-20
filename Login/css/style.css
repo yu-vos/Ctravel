@@ -106,14 +106,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/*透明ボタン*/
-.clear-button {
-  border: none; /* 枠線を消す */
-  outline: none; /* クリックしたときに表示される枠線を消す */
-  background: transparent; /* 背景の灰色を消す */
-  cursor: pointer;
-}
-
 .signbutton {
   border: 1px solid #4285f4;
   font-weight: bold;

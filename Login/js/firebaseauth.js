@@ -1,9 +1,3 @@
-//メール認証に関する記事
-//https://nipo.sndbox.jp/develop-blog/emailverified
-
-//参考サンプルコード
-//https://github.com/iamshaunjp/firebase-auth/blob/lesson-23/scripts/auth.js
-
 // Initialize Firebase
   var config = {
     apiKey: "AIzaSyC9KcYrMwFoR7VASRqKzEVz-Gb3y3H4hoc",
